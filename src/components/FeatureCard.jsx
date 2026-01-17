@@ -35,7 +35,7 @@ const FeatureCard = ({ icon: Icon, title, description, gradient, path, category 
 
         {/* Link */}
         <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-all group-hover:gap-3">
-          Learn more
+          Try it now
           <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
         </span>
       </div>

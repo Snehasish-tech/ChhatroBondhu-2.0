@@ -10,18 +10,21 @@ const Footer = () => {
   };
 
   return (
-    <footer id="contact" className="border-t border-border bg-card py-12 lg:py-16">
+    <footer id="contact" className="border-t border-border bg-gradient-to-br from-card via-secondary/20 to-card py-12 lg:py-16">
       <div className="container">
         <div className="grid gap-8 lg:grid-cols-6">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-primary">
+            <Link to="/" className="flex items-center gap-2 mb-4 group">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary via-purple-500 to-pink-600 text-white shadow-md group-hover:shadow-lg group-hover:shadow-primary/30 transition-all">
                 <BookOpen className="h-5 w-5" />
               </div>
-              <span className="text-xl font-bold text-foreground">ChhatroBondhu</span>
+              <span className="text-xl font-bold">
+                <span className="bg-gradient-to-r from-primary via-purple-500 to-pink-600 bg-clip-text text-transparent">Chhatro</span>
+                <span className="text-foreground">Bondhu</span>
+              </span>
             </Link>
-            <p className="text-sm text-muted-foreground max-w-xs mb-6">
+            <p className="text-sm text-muted-foreground max-w-xs mb-6 leading-relaxed">
               Your AI-powered study companion. Learn smarter, not harder, with personalized learning tools.
             </p>
             <div className="flex gap-4">
@@ -29,7 +32,7 @@ const Footer = () => {
                 <a
                   key={social}
                   href="#"
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
                 >
                   {social}
                 </a>

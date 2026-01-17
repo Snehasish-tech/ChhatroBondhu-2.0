@@ -12,6 +12,17 @@ import FocusMode from "./pages/FocusMode";
 import MentalHealth from "./pages/MentalHealth";
 import Auth from "./pages/Auth";
 import NotFound from "./pages/NotFound";
+import VoiceNotes from "./pages/VoiceNotes";
+import SmartSchedule from "./pages/SmartSchedule";
+import HandwritingToDigital from "./pages/HandwritingToDigital";
+import YouTubeStudy from "./pages/YouTubeStudy";
+import ExamAnalyzer from "./pages/ExamAnalyzer";
+import SmartReminders from "./pages/SmartReminders";
+import StudySpotify from "./pages/StudySpotify";
+import ThreeDVisualizations from "./pages/ThreeDVisualizations";
+import ChallengeMode from "./pages/ChallengeMode";
+import SmartFlashcards from "./pages/SmartFlashcards";
+import AIQuizGenerator from "./pages/AIQuizGenerator";
 
 
 const queryClient = new QueryClient();
@@ -31,6 +42,17 @@ const App = () => (
             <Route path="/ai-assistant" element={<AIAssistant />} />
             <Route path="/focus-mode" element={<FocusMode />} />
             <Route path="/mental-health" element={<MentalHealth />} />
+            <Route path="/voice-notes" element={<VoiceNotes />} />
+            <Route path="/smart-schedule" element={<SmartSchedule />} />
+            <Route path="/handwriting-to-digital" element={<HandwritingToDigital />} />
+            <Route path="/youtube-study" element={<YouTubeStudy />} />
+            <Route path="/exam-analyzer" element={<ExamAnalyzer />} />
+            <Route path="/smart-reminders" element={<SmartReminders />} />
+            <Route path="/study-spotify" element={<StudySpotify />} />
+            <Route path="/3d-visualizations" element={<ThreeDVisualizations />} />
+            <Route path="/challenge-mode" element={<ChallengeMode />} />
+            <Route path="/smart-flashcards" element={<SmartFlashcards />} />
+            <Route path="/ai-quiz-generator" element={<AIQuizGenerator />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </TooltipProvider>

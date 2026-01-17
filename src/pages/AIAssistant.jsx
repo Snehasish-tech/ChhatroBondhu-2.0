@@ -1,14 +1,13 @@
 import { useState, useRef, useEffect } from "react";
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Bot, Send, User, Sparkles, BookOpen, Calculator, Lightbulb, Loader2 } from "lucide-react";
+import { Bot, Send, User, Sparkles, BookOpen, Calculator, Lightbulb, Loader2, AlertCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
-
-// interface removed
+import { getAIResponse, isAIConfigured, getAIProviderName } from "@/lib/aiService";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 
 const quickPrompts = [
   { icon: BookOpen, text: "Explain a concept", prompt: "Can you explain the concept of photosynthesis in simple terms?" },
@@ -17,11 +16,14 @@ const quickPrompts = [
 ];
 
 export default function AIAssistant() {
+  const aiConfigured = isAIConfigured();
   const [messages, setMessages] = useState([
     {
       id: "1",
       role: "assistant",
-      content: "Hi! I'm your AI Study Assistant. I can help you understand concepts, solve problems, create study plans, and answer your questions. What would you like to learn today?",
+      content: aiConfigured 
+        ? `Hi! I'm your AI Study Assistant powered by ${getAIProviderName()}. I can help you understand concepts, solve problems, create study plans, and answer your questions. What would you like to learn today?`
+        : "Hi! I'm your AI Study Assistant. To enable live AI responses, please configure your API key in the .env file. Check .env.example for instructions.",
       timestamp: new Date(),
     },
   ]);
@@ -30,8 +32,12 @@ export default function AIAssistant() {
   const scrollRef = useRef(null);
 
   useEffect(() => {
+    // Auto scroll to bottom when new messages arrive
     if (scrollRef.current) {
-      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+      const scrollElement = scrollRef.current.querySelector('[data-radix-scroll-area-viewport]');
+      if (scrollElement) {
+        scrollElement.scrollTop = scrollElement.scrollHeight;
+      }
     }
   }, [messages]);
 
@@ -50,25 +56,30 @@ export default function AIAssistant() {
     setInput("");
     setIsLoading(true);
 
-    // Simulate AI response (replace with actual AI integration)
-    setTimeout(() => {
-      const responses = [
-        "That's a great question! Let me break this down for you...",
-        "Based on your question, here's what you need to know...",
-        "I'd be happy to help with that! Here's an explanation...",
-        "Good thinking! Let me provide some insights on this topic...",
-      ];
+    try {
+      // Get AI response from configured provider
+      const result = await getAIResponse([...messages, userMessage]);
       
       const assistantMessage = {
         id: (Date.now() + 1).toString(),
         role: "assistant",
-        content: `${responses[Math.floor(Math.random() * responses.length)]}\n\nThis is a simulated response. To get real AI responses, you would need to connect to an AI service. The AI can help you with:\n\n• Explaining complex topics\n• Solving math problems step by step\n• Creating study schedules\n• Providing exam preparation tips\n• Answering subject-specific questions`,
+        content: result.content,
         timestamp: new Date(),
       };
       
       setMessages((prev) => [...prev, assistantMessage]);
+    } catch (error) {
+      console.error('Error getting AI response:', error);
+      const errorMessage = {
+        id: (Date.now() + 1).toString(),
+        role: "assistant",
+        content: "Sorry, I encountered an error while processing your request. Please try again.",
+        timestamp: new Date(),
+      };
+      setMessages((prev) => [...prev, errorMessage]);
+    } finally {
       setIsLoading(false);
-    }, 1500);
+    }
   };
 
   return (
@@ -76,85 +87,111 @@ export default function AIAssistant() {
       <Header />
       
       <main className="container mx-auto px-4 py-8 pt-24">
-        <div className="mb-8 text-center">
-          <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary mb-4">
-            <Bot className="h-4 w-4" />
-            AI-Powered Learning
+        <div className="mb-12 text-center space-y-8">
+          <div className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-primary/15 via-purple-500/15 to-pink-500/15 border border-primary/30 px-6 py-3 text-sm font-semibold backdrop-blur-sm mb-6">
+            <div className="flex h-5 w-5 items-center justify-center rounded-full bg-gradient-to-br from-primary to-purple-600">
+              <Bot className="h-3 w-3 text-white" />
+            </div>
+            <span className="bg-gradient-to-r from-primary via-purple-600 to-pink-600 bg-clip-text text-transparent">AI-Powered Learning Assistant</span>
           </div>
-          <h1 className="text-3xl font-bold text-foreground md:text-4xl">
-            AI Study Assistant
-          </h1>
-          <p className="mt-2 text-muted-foreground max-w-lg mx-auto">
-            Get instant help with your studies. Ask questions, solve problems, and learn concepts.
-          </p>
+          <div className="space-y-4 max-w-3xl mx-auto">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
+              <span className="text-foreground">Your Personal</span>
+              <br />
+              <span className="inline-block mt-2 bg-gradient-to-r from-primary via-purple-500 to-pink-600 bg-clip-text text-transparent">AI Study Mentor</span>
+            </h1>
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-medium">
+              Get instant help with your studies. Ask questions, solve problems, understand complex concepts, and create personalized learning plans.
+            </p>
+          </div>
         </div>
 
         <div className="max-w-4xl mx-auto">
+          {/* AI Configuration Alert */}
+          {!aiConfigured && (
+            <Alert className="mb-4 border-amber-500/50 bg-amber-500/10">
+              <AlertCircle className="h-4 w-4 text-amber-500" />
+              <AlertDescription className="text-sm">
+                <strong>AI not configured.</strong> To enable live AI responses, create a <code className="px-1 py-0.5 bg-muted rounded">.env</code> file and add your API key. 
+                Check <code className="px-1 py-0.5 bg-muted rounded">.env.example</code> for setup instructions.
+              </AlertDescription>
+            </Alert>
+          )}
+          
           {/* Quick Prompts */}
-          <div className="flex flex-wrap gap-2 mb-4 justify-center">
-            {quickPrompts.map((prompt, index) => {
-              const Icon = prompt.icon;
-              return (
-                <Button
-                  key={index}
-                  variant="outline"
-                  size="sm"
-                  onClick={() => handleSend(prompt.prompt)}
-                  className="gap-2"
-                  disabled={isLoading}
-                >
-                  <Icon className="h-4 w-4" />
-                  {prompt.text}
-                </Button>
-              );
-            })}
+          <div className="space-y-4 mb-8">
+            <p className="text-center text-sm font-semibold text-muted-foreground">Quick prompts to get started:</p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {quickPrompts.map((prompt, index) => {
+                const Icon = prompt.icon;
+                const gradients = [
+                  "from-purple-500 to-pink-600",
+                  "from-blue-500 to-cyan-600",
+                  "from-yellow-500 to-orange-600"
+                ];
+                return (
+                  <Button
+                    key={index}
+                    onClick={() => handleSend(prompt.prompt)}
+                    disabled={isLoading}
+                    className={`h-auto py-4 px-4 flex flex-col items-start gap-3 bg-gradient-to-br ${gradients[index]} text-white hover:shadow-lg hover:shadow-current/20 transition-all border-0`}
+                  >
+                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/20 backdrop-blur-sm">
+                      <Icon className="h-4 w-4" />
+                    </div>
+                    <span className="font-semibold text-sm text-left">{prompt.text}</span>
+                  </Button>
+                );
+              })}
+            </div>
           </div>
 
           {/* Chat Container */}
-          <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
-            <CardHeader className="border-b border-border/50 pb-4">
-              <CardTitle className="flex items-center gap-2 text-lg">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10">
-                  <Sparkles className="h-4 w-4 text-primary" />
+          <Card className="border border-primary/20 bg-gradient-to-br from-card via-card to-card/80 backdrop-blur-2xl shadow-2xl shadow-primary/10">
+            <CardHeader className="border-b border-primary/10 pb-6 bg-gradient-to-r from-primary/5 via-purple-500/5 to-pink-500/5">
+              <CardTitle className="flex items-center gap-3 text-xl font-bold">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-primary to-pink-600">
+                  <Sparkles className="h-5 w-5 text-white" />
                 </div>
-                Study Chat
+                <span className="bg-gradient-to-r from-primary to-pink-600 bg-clip-text text-transparent">Smart Study Chat</span>
               </CardTitle>
             </CardHeader>
             <CardContent className="p-0">
               {/* Messages */}
-              <ScrollArea className="h-[400px] p-4" ref={scrollRef}>
-                <div className="space-y-4">
+              <div ref={scrollRef}>
+                <ScrollArea className="h-[400px] p-4">
+                  <div className="space-y-4">
                   {messages.map((message) => (
                     <div
                       key={message.id}
                       className={cn(
-                        "flex gap-3",
+                        "flex gap-3 animate-fade-in",
                         message.role === "user" ? "flex-row-reverse" : "flex-row"
                       )}
                     >
                       <div
                         className={cn(
-                          "flex h-8 w-8 shrink-0 items-center justify-center rounded-full",
+                          "flex h-9 w-9 shrink-0 items-center justify-center rounded-full font-bold text-white",
                           message.role === "user"
-                            ? "bg-primary text-primary-foreground"
-                            : "bg-secondary text-secondary-foreground"
+                            ? "bg-gradient-to-br from-primary to-pink-600"
+                            : "bg-gradient-to-br from-purple-500 to-blue-600"
                         )}
                       >
                         {message.role === "user" ? (
-                          <User className="h-4 w-4" />
+                          <User className="h-5 w-5" />
                         ) : (
-                          <Bot className="h-4 w-4" />
+                          <Bot className="h-5 w-5" />
                         )}
                       </div>
                       <div
                         className={cn(
-                          "rounded-2xl px-4 py-2 max-w-[80%]",
+                          "rounded-3xl px-5 py-3 max-w-[80%] text-sm leading-relaxed",
                           message.role === "user"
-                            ? "bg-primary text-primary-foreground"
-                            : "bg-muted"
+                            ? "bg-gradient-to-br from-primary to-pink-600 text-white shadow-lg shadow-primary/20"
+                            : "bg-gradient-to-br from-slate-100 to-slate-50 dark:from-slate-800 dark:to-slate-900 text-foreground border border-border/50"
                         )}
                       >
-                        <p className="text-sm whitespace-pre-wrap">{message.content}</p>
+                        <p className="whitespace-pre-wrap">{message.content}</p>
                       </div>
                     </div>
                   ))}
@@ -170,25 +207,35 @@ export default function AIAssistant() {
                   )}
                 </div>
               </ScrollArea>
+              </div>
 
               {/* Input */}
-              <div className="border-t border-border/50 p-4">
+              <div className="border-t border-primary/10 p-5 bg-gradient-to-r from-primary/2 via-purple-500/2 to-pink-500/2">
                 <form
                   onSubmit={(e) => {
                     e.preventDefault();
                     handleSend();
                   }}
-                  className="flex gap-2"
+                  className="flex gap-3"
                 >
                   <Input
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
                     placeholder="Ask anything about your studies..."
-                    className="flex-1"
+                    className="flex-1 h-12 px-5 border-primary/20 bg-card focus:border-primary/50 rounded-xl"
                     disabled={isLoading}
                   />
-                  <Button type="submit" size="icon" disabled={isLoading || !input.trim()}>
-                    <Send className="h-4 w-4" />
+                  <Button 
+                    type="submit" 
+                    size="icon" 
+                    disabled={isLoading || !input.trim()}
+                    className="h-12 w-12 bg-gradient-to-br from-primary to-pink-600 hover:shadow-lg hover:shadow-primary/30 transition-all"
+                  >
+                    {isLoading ? (
+                      <Loader2 className="h-5 w-5 animate-spin" />
+                    ) : (
+                      <Send className="h-5 w-5" />
+                    )}
                   </Button>
                 </form>
               </div>
@@ -196,8 +243,6 @@ export default function AIAssistant() {
           </Card>
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 }

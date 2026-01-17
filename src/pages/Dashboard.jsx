@@ -1,5 +1,4 @@
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import StudyStreakCard from "@/components/dashboard/StudyStreakCard";
 import AchievementsCard from "@/components/dashboard/AchievementsCard";
 import ProgressCharts from "@/components/dashboard/ProgressCharts";
@@ -10,8 +9,8 @@ const Dashboard = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="py-8">
-        <div className="container">
+      <main className="container mx-auto px-4 py-8 pt-24">
+        <div className="max-w-7xl mx-auto">
           {/* Page Header */}
           <div className="mb-8">
             <h1 className="text-3xl font-bold text-foreground mb-2">
@@ -41,7 +40,6 @@ const Dashboard = () => {
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   );
 };

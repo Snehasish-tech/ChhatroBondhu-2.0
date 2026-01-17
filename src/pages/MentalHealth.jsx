@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
@@ -45,10 +44,10 @@ const weeklyMoods = [
 ];
 
 export default function MentalHealth() {
-  const [selectedMood, setSelectedMood] = useState<number | null>(null);
+  const [selectedMood, setSelectedMood] = useState(null);
   const [journalEntry, setJournalEntry] = useState("");
   const [isBreathing, setIsBreathing] = useState(false);
-  const [breathPhase, setBreathPhase] = useState<"inhale" | "hold" | "exhale">("inhale");
+  const [breathPhase, setBreathPhase] = useState("inhale");
 
   const wellnessScore = 78;
 
@@ -249,8 +248,6 @@ export default function MentalHealth() {
           </Card>
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 }

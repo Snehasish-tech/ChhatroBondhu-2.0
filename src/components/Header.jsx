@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { BookOpen, Menu, X, LogOut, User } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
@@ -15,8 +15,18 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const { user, signOut } = useAuth();
+
+  // Detect scroll for enhanced header effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navLinks = [
     { name: "Features", href: "/#features" },
@@ -33,22 +43,27 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-lg">
+    <header className={`fixed top-0 z-50 w-full transition-all duration-300 ${
+      scrolled 
+        ? "border-b border-border/60 bg-background/98 backdrop-blur-2xl shadow-lg shadow-primary/8" 
+        : "border-b border-border/30 bg-background/70 backdrop-blur-xl"
+    }`}>
       <div className="container flex h-16 items-center justify-between">
         
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 group">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-primary transition-transform group-hover:scale-105">
-            <BookOpen className="h-6 w-6" />
+          <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary via-purple-500 to-pink-600 text-primary-foreground shadow-lg shadow-primary/30 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 group-hover:shadow-primary/60">
+            <BookOpen className="h-6 w-6 relative z-10" />
+            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary via-purple-500 to-pink-600 blur-lg opacity-0 group-hover:opacity-70 transition-opacity"></div>
           </div>
           <span className="text-xl font-bold">
-  <span className="text-primary">Chhatro</span>
-  <span className="text-foreground">Bondhu</span>
-</span>
+            <span className="bg-gradient-to-r from-primary via-purple-500 to-pink-600 bg-clip-text text-transparent">Chhatro</span>
+            <span className="text-foreground">Bondhu</span>
+          </span>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-6">
+        <nav className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => {
             const active = isActive(link.href);
             const isAnchor = link.href.startsWith("/#");
@@ -57,21 +72,27 @@ const Header = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-foreground ${
+                className={`relative text-sm font-semibold transition-all duration-300 hover:text-primary group ${
                   active ? "text-primary" : "text-muted-foreground"
                 }`}
               >
                 {link.name}
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-primary via-purple-600 to-pink-600 transition-all duration-300 ${
+                  active ? "w-full" : "w-0 group-hover:w-full"
+                }`}></span>
               </a>
             ) : (
               <Link
                 key={link.name}
                 to={link.href}
-                className={`text-sm font-medium transition-colors hover:text-foreground ${
+                className={`relative text-sm font-semibold transition-all duration-300 hover:text-primary group ${
                   active ? "text-primary" : "text-muted-foreground"
                 }`}
               >
                 {link.name}
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-primary via-purple-600 to-pink-600 transition-all duration-300 ${
+                  active ? "w-full" : "w-0 group-hover:w-full"
+                }`}></span>
               </Link>
             );
           })}

@@ -1,5 +1,4 @@
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { PomodoroTimer } from "@/components/study-room/PomodoroTimer";
 import { AmbientSounds } from "@/components/study-room/AmbientSounds";
 import { DistractionBlocker } from "@/components/study-room/DistractionBlocker";
@@ -45,8 +44,6 @@ export default function StudyRoom() {
           </div>
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 }

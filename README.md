@@ -92,7 +92,7 @@
 
 ## 📁 Project Structure
 
-
+```
 chattrobondhu-2.0/
 ├── public/              # Static assets
 ├── src/

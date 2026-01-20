@@ -117,25 +117,37 @@ const SmartSchedule = () => {
           <div className="grid lg:grid-cols-3 gap-6">
             {/* Calendar Section */}
             <Card className="p-6">
-              <h2 className="text-xl font-semibold mb-4">Calendar</h2>
-              <Calendar
-                mode="single"
-                selected={date}
-                onSelect={setDate}
-                className="rounded-md border w-full"
-              />
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                <CalendarIcon className="h-5 w-5 text-orange-500" />
+                Calendar
+              </h2>
+              <div className="flex justify-center">
+                <Calendar
+                  mode="single"
+                  selected={date}
+                  onSelect={(newDate) => newDate && setDate(newDate)}
+                  className="rounded-md border"
+                  disabled={false}
+                />
+              </div>
               
-              <div className="mt-4 space-y-2">
-                <p className="text-sm font-semibold">AI Recommendations:</p>
+              <div className="mt-6 space-y-2">
+                <p className="text-sm font-semibold flex items-center gap-2">
+                  <span className="text-lg">🤖</span>
+                  AI Recommendations:
+                </p>
                 <div className="space-y-2">
-                  <div className="text-sm p-2 bg-blue-500/10 rounded-lg">
-                    ✨ Best study time: 9-11 AM
+                  <div className="text-sm p-3 bg-blue-500/10 border border-blue-500/20 rounded-lg flex items-start gap-2">
+                    <span>✨</span>
+                    <span>Best study time: 9-11 AM</span>
                   </div>
-                  <div className="text-sm p-2 bg-green-500/10 rounded-lg">
-                    🎯 Focus on Math today
+                  <div className="text-sm p-3 bg-green-500/10 border border-green-500/20 rounded-lg flex items-start gap-2">
+                    <span>🎯</span>
+                    <span>Focus on Math today</span>
                   </div>
-                  <div className="text-sm p-2 bg-purple-500/10 rounded-lg">
-                    💡 Take a break at 3 PM
+                  <div className="text-sm p-3 bg-purple-500/10 border border-purple-500/20 rounded-lg flex items-start gap-2">
+                    <span>💡</span>
+                    <span>Take a break at 3 PM</span>
                   </div>
                 </div>
               </div>

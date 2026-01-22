@@ -234,4 +234,4 @@ For security-related questions or concerns:
 - Contact maintainers through private channels
 - Use GitHub Security Advisory for vulnerabilities
 
-**Thank you for helping keep React-CB-JS secure! 🔒**
+**Thank you for helping keep ChhatroBondhu-2.0 secure! 🔒**

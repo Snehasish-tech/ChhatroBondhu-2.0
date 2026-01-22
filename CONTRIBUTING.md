@@ -1,4 +1,4 @@
-# 🤝 Contributing to React-CB-JS
+# 🤝 Contributing to ChhatroBondhu-2.0
 
 Thank you for your interest in contributing!
 
@@ -15,8 +15,8 @@ Click on the **Fork** button at the top-right of this GitHub repo.
 
 ### 2️⃣ Clone Your Fork
 ```bash
-git clone https://github.com/YOUR_USERNAME/React-CB-JS.git
-cd React-CB-JS
+git clone https://github.com/Snehasish-tech/ChhatroBondhu-2.0
+cd ChhatroBondhu-2.0
 ```
 
 ### 3️⃣ Create a Feature Branch
@@ -280,7 +280,7 @@ We're here to help you grow! 🌱
 
 ---
 
-## 🎉 Welcome to the React-CB-JS Community!
+## 🎉 Welcome to the ChhatroBondhu-2.0 Community!
 
 Thank you for contributing your time, skills, and creativity. Together, let's build something amazing! 🚀
 

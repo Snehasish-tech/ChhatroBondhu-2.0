@@ -2,7 +2,7 @@
 
 Thank you for your interest in contributing!
 
-React-CB-JS is a fully open-source, student-friendly project, and we welcome contributors of all skill levels. This is a modern React application built with Vite, Tailwind CSS, and Supabase, featuring AI-powered study tools and productivity features.
+ChhatroBondhu-2.0 is a fully open-source, student-friendly project, and we welcome contributors of all skill levels. This is a modern React application built with Vite, Tailwind CSS, and Supabase, featuring AI-powered study tools and productivity features.
 
 Please follow the guidelines below for a smooth and successful contribution.
 

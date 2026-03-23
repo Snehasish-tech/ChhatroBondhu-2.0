@@ -114,8 +114,8 @@
   }
 
   /* Smooth cursor transitions without custom SVG cursors */
-  a, button, [role="button"], input[type="submit"], input[type="button"], .cursor-pointer {
-    @apply cursor-pointer;
+  a, button, [role="button"], input[type="submit"], input[type="button"] {
+    cursor: pointer;
   }
 
   /* Subtle hover transforms */

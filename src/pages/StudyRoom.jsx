@@ -10,11 +10,11 @@ export default function StudyRoom() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       <main className="container mx-auto px-4 py-8 pt-24">
         {/* Page Header */}
         <div className="mb-8 text-center">
-          <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary mb-4">
+          <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 border border-primary/20 text-sm font-medium text-primary mb-4">
             <BookOpen className="h-4 w-4" />
             Focus Environment
           </div>
@@ -22,7 +22,8 @@ export default function StudyRoom() {
             Study Room
           </h1>
           <p className="mt-2 text-muted-foreground max-w-lg mx-auto">
-            Create your perfect study environment with focus timer, ambient sounds, and distraction controls.
+            Create your perfect study environment with focus timer, ambient
+            sounds, and distraction controls.
           </p>
         </div>
 

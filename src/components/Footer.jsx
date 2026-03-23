@@ -10,29 +10,33 @@ const Footer = () => {
   };
 
   return (
-    <footer id="contact" className="border-t border-border bg-gradient-to-br from-card via-secondary/20 to-card py-12 lg:py-16">
+    <footer
+      id="contact"
+      className="border-t border-border bg-muted/30 py-12 lg:py-16"
+    >
       <div className="container">
         <div className="grid gap-8 lg:grid-cols-6">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link to="/" className="flex items-center gap-2 mb-4 group">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary via-purple-500 to-pink-600 text-white shadow-md group-hover:shadow-lg group-hover:shadow-primary/30 transition-all">
+            <Link to="/" className="flex items-center gap-2.5 mb-4 group">
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-primary-foreground transition-transform group-hover:scale-105">
                 <BookOpen className="h-5 w-5" />
               </div>
-              <span className="text-xl font-bold">
-                <span className="bg-gradient-to-r from-primary via-purple-500 to-pink-600 bg-clip-text text-transparent">Chhatro</span>
+              <span className="text-lg font-bold tracking-tight">
+                <span className="text-primary">Chhatro</span>
                 <span className="text-foreground">Bondhu</span>
               </span>
             </Link>
             <p className="text-sm text-muted-foreground max-w-xs mb-6 leading-relaxed">
-              Your AI-powered study companion. Learn smarter, not harder, with personalized learning tools.
+              Your AI-powered study companion. Learn smarter, not harder, with
+              personalized learning tools.
             </p>
             <div className="flex gap-4">
               {["Twitter", "LinkedIn", "GitHub", "Discord"].map((social) => (
                 <a
                   key={social}
                   href="#"
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   {social}
                 </a>
@@ -63,13 +67,19 @@ const Footer = () => {
         {/* Bottom */}
         <div className="mt-12 pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © 2026 ChhatroBondhu. All rights reserved.
+            2026 ChhatroBondhu. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <a
+              href="#"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
               Privacy Policy
             </a>
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <a
+              href="#"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
               Terms of Service
             </a>
           </div>

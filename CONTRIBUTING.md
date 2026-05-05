@@ -1,8 +1,8 @@
-# 🤝 Contributing to React-CB-JS
+# 🤝 Contributing to ChhatroBondhu-2.0
 
 Thank you for your interest in contributing!
 
-React-CB-JS is a fully open-source, student-friendly project, and we welcome contributors of all skill levels. This is a modern React application built with Vite, Tailwind CSS, and Supabase, featuring AI-powered study tools and productivity features.
+ChhatroBondhu-2.0 is a fully open-source, student-friendly project, and we welcome contributors of all skill levels. This is a modern React application built with Vite, Tailwind CSS, and Supabase, featuring AI-powered study tools and productivity features.
 
 Please follow the guidelines below for a smooth and successful contribution.
 
@@ -15,8 +15,8 @@ Click on the **Fork** button at the top-right of this GitHub repo.
 
 ### 2️⃣ Clone Your Fork
 ```bash
-git clone https://github.com/YOUR_USERNAME/React-CB-JS.git
-cd React-CB-JS
+git clone https://github.com/Snehasish-tech/ChhatroBondhu-2.0
+cd ChhatroBondhu-2.0
 ```
 
 ### 3️⃣ Create a Feature Branch
@@ -280,7 +280,7 @@ We're here to help you grow! 🌱
 
 ---
 
-## 🎉 Welcome to the React-CB-JS Community!
+## 🎉 Welcome to the ChhatroBondhu-2.0 Community!
 
 Thank you for contributing your time, skills, and creativity. Together, let's build something amazing! 🚀
 

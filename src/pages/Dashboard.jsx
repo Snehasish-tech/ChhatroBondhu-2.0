@@ -3,6 +3,7 @@ import AchievementsCard from "@/components/dashboard/AchievementsCard";
 import ProgressCharts from "@/components/dashboard/ProgressCharts";
 import RecommendationsCard from "@/components/dashboard/RecommendationsCard";
 import QuickStatsBar from "@/components/dashboard/QuickStatsBar";
+import { TrendingUp } from "lucide-react";
 
 const Dashboard = () => {
   return (
@@ -11,8 +12,12 @@ const Dashboard = () => {
         <div className="max-w-7xl mx-auto">
           {/* Page Header */}
           <div className="mb-8">
+            <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 border border-primary/20 text-sm font-medium text-primary mb-4">
+              <TrendingUp className="h-4 w-4" />
+              Your Progress
+            </div>
             <h1 className="text-3xl font-bold text-foreground mb-2">
-              Welcome back, Student! 👋
+              Welcome back, Student!
             </h1>
             <p className="text-muted-foreground">
               Track your progress and keep up the momentum.

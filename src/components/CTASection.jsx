@@ -1,110 +1,105 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles, Star, Zap } from "lucide-react";
+import { ArrowRight, Star, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const CTASection = () => {
-  const handleContactSales = () => {
-    window.location.href = "mailto:contact@chhatrobondhu.com?subject=Sales Inquiry";
-  };
+  const benefits = [
+    "Free to get started",
+    "No credit card required",
+    "Cancel anytime",
+  ];
 
   return (
-    <section className="py-24 lg:py-32 relative overflow-hidden">
-      {/* Vibrant Purple Background with Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#8B5CF6] via-[#A855F7] to-[#9333EA]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(255,255,255,0.15),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(167,139,250,0.3),transparent_60%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(196,181,253,0.2),transparent_60%)]" />
+    <section className="py-16 lg:py-24 relative overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 bg-primary">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:40px_40px]" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
       </div>
-
-      {/* Subtle Pattern Overlay */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.05)_1px,transparent_1px)] bg-[size:60px_60px]" />
-      </div>
-
-
 
       <div className="container relative z-10">
-        <div className="text-center max-w-5xl mx-auto px-4">
-          
-          {/* Decorative Icon */}
-          <div className="inline-flex items-center justify-center mb-8 relative">
-            <div className="relative">
-              {/* Main Icon Container */}
-              <div className="flex items-center justify-center h-24 w-24 rounded-3xl bg-white/15 backdrop-blur-md border border-white/20 shadow-2xl">
-                <Sparkles className="h-12 w-12 text-white" />
-              </div>
-              
-              {/* Floating Star Icons */}
-              <div className="absolute -top-2 -right-3 animate-bounce">
-                <Star className="h-6 w-6 text-yellow-300 fill-yellow-300" />
-              </div>
-              <div className="absolute -bottom-1 -left-2 animate-pulse" style={{animationDelay: '0.3s'}}>
-                <Zap className="h-5 w-5 text-yellow-200" />
-              </div>
-            </div>
-          </div>
-
+        <div className="text-center max-w-3xl mx-auto">
           {/* Headline */}
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black text-white mb-6 leading-tight tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6 leading-tight">
             Ready to Transform Your
             <br />
-            <span className="bg-gradient-to-r from-yellow-200 via-yellow-100 to-white bg-clip-text text-transparent">
-              Learning Journey?
-            </span>
+            Learning Journey?
           </h2>
 
           {/* Description */}
-          <p className="text-xl sm:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed font-medium">
-            Join over <span className="font-bold text-yellow-200">100,000+ students</span> who are already learning smarter with ChhatroBondhu. Start your journey today.
+          <p className="text-lg text-primary-foreground/90 mb-8 max-w-2xl mx-auto leading-relaxed">
+            Join over 100,000+ students who are already learning smarter with
+            ChhatroBondhu.
           </p>
 
+          {/* Benefits */}
+          <div className="flex flex-wrap justify-center gap-4 mb-10">
+            {benefits.map((benefit, index) => (
+              <div
+                key={index}
+                className="flex items-center gap-2 text-primary-foreground/90"
+              >
+                <CheckCircle2 className="h-4 w-4" />
+                <span className="text-sm font-medium">{benefit}</span>
+              </div>
+            ))}
+          </div>
+
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row justify-center gap-5 mb-14">
+          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
             <Button
               size="lg"
               asChild
-              className="h-16 px-12 text-lg font-bold bg-white text-purple-600 hover:bg-yellow-50 hover:scale-105 shadow-2xl shadow-black/20 group transition-all duration-300"
+              className="bg-background text-primary hover:bg-background/90 shadow-xl"
             >
               <Link to="/auth">
-                <span className="flex items-center gap-2">
-                  Get Started Free
-                  <ArrowRight className="h-6 w-6 group-hover:translate-x-1 transition-transform" />
-              
-              
-          </span>
+                Get Started Free
+                <ArrowRight className="h-4 w-4 ml-1" />
               </Link>
             </Button>
-            
             <Button
               variant="outline"
               size="lg"
-              onClick={handleContactSales}
-              className="h-16 px-12 text-lg font-bold border-2 border-white/30 text-white bg-white/10 backdrop-blur-md hover:bg-white/20 hover:border-white/50 hover:scale-105 transition-all"
+              className="border-primary-foreground/30 text-primary-foreground bg-transparent hover:bg-primary-foreground/10 hover:border-primary-foreground/50"
+              onClick={() =>
+                (window.location.href =
+                  "mailto:contact@chhatrobondhu.com?subject=Sales Inquiry")
+              }
             >
               Contact Sales
             </Button>
           </div>
 
-          {/* Trust Indicators - Bottom Row */}
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-8 sm:gap-12">
-            {/* Avatars with joined count */}
+          {/* Social Proof */}
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
+            {/* Avatars */}
             <div className="flex items-center gap-3">
-              <div className="flex -space-x-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-400 to-rose-500 border-2 border-white shadow-lg" />
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-cyan-500 border-2 border-white shadow-lg" />
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-green-400 to-emerald-500 border-2 border-white shadow-lg" />
+              <div className="flex -space-x-2">
+                <div className="w-8 h-8 rounded-full bg-accent/80 border-2 border-primary" />
+                <div className="w-8 h-8 rounded-full bg-primary-foreground/20 border-2 border-primary" />
+                <div className="w-8 h-8 rounded-full bg-primary-foreground/30 border-2 border-primary" />
               </div>
-              <span className="text-white font-semibold text-base">1000+ joined this week</span>
+              <span className="text-sm font-medium text-primary-foreground/90">
+                1000+ joined this week
+              </span>
             </div>
+
+            <div className="hidden sm:block h-4 w-px bg-primary-foreground/20" />
 
             {/* Rating */}
             <div className="flex items-center gap-2">
               <div className="flex gap-0.5">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 text-yellow-300 fill-yellow-300" />
+                  <Star
+                    key={i}
+                    className="h-4 w-4 text-accent fill-accent"
+                  />
                 ))}
               </div>
-              <span className="text-white font-semibold text-base ml-2">4.9/5 rating</span>
+              <span className="text-sm font-medium text-primary-foreground/90">
+                4.9/5 rating
+              </span>
             </div>
           </div>
         </div>

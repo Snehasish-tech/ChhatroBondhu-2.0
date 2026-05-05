@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "@/contexts/AuthContext";
 import ScrollToTop from "@/components/ScrollToTop";
+import ProtectedLayout from "@/components/ProtectedLayout";
 import Index from "./pages/Index";
 import Dashboard from "./pages/Dashboard";
 import StudyRoom from "./pages/StudyRoom";
@@ -37,24 +38,141 @@ const App = () => (
           <Toaster />
           <Sonner />
           <Routes>
+            {/* Public Routes */}
             <Route path="/" element={<Index />} />
             <Route path="/auth" element={<Auth />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/study-room" element={<StudyRoom />} />
-            <Route path="/ai-assistant" element={<AIAssistant />} />
-            <Route path="/focus-mode" element={<FocusMode />} />
-            <Route path="/mental-health" element={<MentalHealth />} />
-            <Route path="/voice-notes" element={<VoiceNotes />} />
-            <Route path="/smart-schedule" element={<SmartSchedule />} />
-            <Route path="/handwriting-to-digital" element={<HandwritingToDigital />} />
-            <Route path="/youtube-study" element={<YouTubeStudy />} />
-            <Route path="/exam-analyzer" element={<ExamAnalyzer />} />
-            <Route path="/smart-reminders" element={<SmartReminders />} />
-            <Route path="/study-spotify" element={<StudySpotify />} />
-            <Route path="/3d-visualizations" element={<ThreeDVisualizations />} />
-            <Route path="/challenge-mode" element={<ChallengeMode />} />
-            <Route path="/smart-flashcards" element={<SmartFlashcards />} />
-            <Route path="/ai-quiz-generator" element={<AIQuizGenerator />} />
+
+            {/* Protected Routes with Sidebar */}
+            <Route
+              path="/dashboard"
+              element={
+                <ProtectedLayout>
+                  <Dashboard />
+                </ProtectedLayout>
+              }
+            />
+            <Route
+              path="/study-room"
+              element={
+                <ProtectedLayout>
+                  <StudyRoom />
+                </ProtectedLayout>
+              }
+            />
+            <Route
+              path="/ai-assistant"
+              element={
+                <ProtectedLayout>
+                  <AIAssistant />
+                </ProtectedLayout>
+              }
+            />
+            <Route
+              path="/focus-mode"
+              element={
+                <ProtectedLayout>
+                  <FocusMode />
+                </ProtectedLayout>
+              }
+            />
+            <Route
+              path="/mental-health"
+              element={
+                <ProtectedLayout>
+                  <MentalHealth />
+                </ProtectedLayout>
+              }
+            />
+            <Route
+              path="/voice-notes"
+              element={
+                <ProtectedLayout>
+                  <VoiceNotes />
+                </ProtectedLayout>
+              }
+            />
+            <Route
+              path="/smart-schedule"
+              element={
+                <ProtectedLayout>
+                  <SmartSchedule />
+                </ProtectedLayout>
+              }
+            />
+            <Route
+              path="/handwriting-to-digital"
+              element={
+                <ProtectedLayout>
+                  <HandwritingToDigital />
+                </ProtectedLayout>
+              }
+            />
+            <Route
+              path="/youtube-study"
+              element={
+                <ProtectedLayout>
+                  <YouTubeStudy />
+                </ProtectedLayout>
+              }
+            />
+            <Route
+              path="/exam-analyzer"
+              element={
+                <ProtectedLayout>
+                  <ExamAnalyzer />
+                </ProtectedLayout>
+              }
+            />
+            <Route
+              path="/smart-reminders"
+              element={
+                <ProtectedLayout>
+                  <SmartReminders />
+                </ProtectedLayout>
+              }
+            />
+            <Route
+              path="/study-spotify"
+              element={
+                <ProtectedLayout>
+                  <StudySpotify />
+                </ProtectedLayout>
+              }
+            />
+            <Route
+              path="/3d-visualizations"
+              element={
+                <ProtectedLayout>
+                  <ThreeDVisualizations />
+                </ProtectedLayout>
+              }
+            />
+            <Route
+              path="/challenge-mode"
+              element={
+                <ProtectedLayout>
+                  <ChallengeMode />
+                </ProtectedLayout>
+              }
+            />
+            <Route
+              path="/smart-flashcards"
+              element={
+                <ProtectedLayout>
+                  <SmartFlashcards />
+                </ProtectedLayout>
+              }
+            />
+            <Route
+              path="/ai-quiz-generator"
+              element={
+                <ProtectedLayout>
+                  <AIQuizGenerator />
+                </ProtectedLayout>
+              }
+            />
+
+            {/* 404 Route */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </TooltipProvider>

@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from "react";
-import Header from "@/components/Header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -84,9 +83,7 @@ export default function AIAssistant() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
-      
-      <main className="container mx-auto px-4 py-8 pt-24">
+      <main className="container mx-auto px-4 py-8">
         <div className="mb-12 text-center space-y-8">
           <div className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-primary/15 via-purple-500/15 to-pink-500/15 border border-primary/30 px-6 py-3 text-sm font-semibold backdrop-blur-sm mb-6">
             <div className="flex h-5 w-5 items-center justify-center rounded-full bg-gradient-to-br from-primary to-purple-600">

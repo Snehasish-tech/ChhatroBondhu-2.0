@@ -22,7 +22,7 @@ export default function Auth() {
   const [errors, setErrors] = useState({});
   const [activeTab, setActiveTab] = useState("signin");
   
-  const { signIn, signUp, user, loading } = useAuth();
+  const { signIn, signUp, user, loading, demoMode, demoCredentials } = useAuth();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -33,15 +33,20 @@ export default function Auth() {
 
   const validateForm = (isSignUp) => {
     const newErrors = {};
+
+    const getFirstIssue = (result) =>
+      result?.error?.errors?.[0]?.message ||
+      result?.error?.issues?.[0]?.message ||
+      null;
     
     const emailResult = emailSchema.safeParse(email);
     if (!emailResult.success) {
-      newErrors.email = emailResult.error.errors[0].message;
+      newErrors.email = getFirstIssue(emailResult) || "Please enter a valid email address";
     }
     
     const passwordResult = passwordSchema.safeParse(password);
     if (!passwordResult.success) {
-      newErrors.password = passwordResult.error.errors[0].message;
+      newErrors.password = getFirstIssue(passwordResult) || "Password must be at least 6 characters";
     }
     
     if (isSignUp && !fullName.trim()) {
@@ -73,6 +78,37 @@ export default function Auth() {
     const { error } = await signUp(email, password, fullName);
     setIsLoading(false);
     
+    if (!error) {
+      navigate("/dashboard");
+    }
+  };
+
+  const handleDemoSignIn = async () => {
+    setErrors({});
+    setEmail(demoCredentials.email);
+    setPassword(demoCredentials.password);
+    setIsLoading(true);
+    const { error } = await signIn(demoCredentials.email, demoCredentials.password);
+    setIsLoading(false);
+
+    if (!error) {
+      navigate("/dashboard");
+    }
+  };
+
+  const handleDemoSignUp = async () => {
+    setErrors({});
+    setFullName(demoCredentials.fullName);
+    setEmail(demoCredentials.email);
+    setPassword(demoCredentials.password);
+    setIsLoading(true);
+    const { error } = await signUp(
+      demoCredentials.email,
+      demoCredentials.password,
+      demoCredentials.fullName
+    );
+    setIsLoading(false);
+
     if (!error) {
       navigate("/dashboard");
     }
@@ -223,6 +259,9 @@ export default function Auth() {
           {/* Sign In Form */}
           {activeTab === "signin" && (
             <form onSubmit={handleSignIn} className="space-y-5">
+              <div className="rounded-md border border-dashed p-3 text-xs text-muted-foreground">
+                Demo access is available. Use the demo account to enter without a database.
+              </div>
               <div className="space-y-4">
                 <div className="space-y-2">
                   <Label htmlFor="signin-email" className="text-sm font-medium">
@@ -298,6 +337,16 @@ export default function Auth() {
                 )}
               </Button>
 
+              <Button
+                type="button"
+                variant="secondary"
+                className="w-full h-11"
+                disabled={isLoading}
+                onClick={handleDemoSignIn}
+              >
+                Use Demo Account
+              </Button>
+
               <div className="relative">
                 <div className="absolute inset-0 flex items-center">
                   <span className="w-full border-t" />
@@ -344,6 +393,9 @@ export default function Auth() {
           {/* Sign Up Form */}
           {activeTab === "signup" && (
             <form onSubmit={handleSignUp} className="space-y-5">
+              <div className="rounded-md border border-dashed p-3 text-xs text-muted-foreground">
+                Demo access is available. Create a local demo account to continue.
+              </div>
               <div className="space-y-4">
                 <div className="space-y-2">
                   <Label htmlFor="signup-name" className="text-sm font-medium">
@@ -446,6 +498,16 @@ export default function Auth() {
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </>
                   )}
+                </Button>
+
+                <Button
+                  type="button"
+                  variant="secondary"
+                  className="w-full h-11"
+                  disabled={isLoading}
+                  onClick={handleDemoSignUp}
+                >
+                  Create Demo Account
                 </Button>
 
                 <div className="relative">

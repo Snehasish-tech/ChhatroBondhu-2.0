@@ -8,7 +8,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Slider } from "@/components/ui/slider";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
-import Header from "@/components/Header";
 
 const AIQuizGenerator = () => {
   const [notes, setNotes] = useState("");
@@ -88,9 +87,7 @@ const AIQuizGenerator = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
-      
-      <main className="container mx-auto px-4 py-8 pt-24">
+      <main className="container mx-auto px-4 py-8">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold mb-3 bg-gradient-to-r from-fuchsia-500 to-pink-500 bg-clip-text text-transparent">

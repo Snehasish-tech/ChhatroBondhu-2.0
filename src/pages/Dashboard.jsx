@@ -1,4 +1,3 @@
-import Header from "@/components/Header";
 import StudyStreakCard from "@/components/dashboard/StudyStreakCard";
 import AchievementsCard from "@/components/dashboard/AchievementsCard";
 import ProgressCharts from "@/components/dashboard/ProgressCharts";
@@ -8,8 +7,7 @@ import QuickStatsBar from "@/components/dashboard/QuickStatsBar";
 const Dashboard = () => {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
-      <main className="container mx-auto px-4 py-8 pt-24">
+      <main className="container mx-auto px-4 py-8">
         <div className="max-w-7xl mx-auto">
           {/* Page Header */}
           <div className="mb-8">

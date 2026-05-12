@@ -41,35 +41,30 @@ const Header = () => {
   };
 
   return (
-    <header
-      className={`fixed top-0 z-50 w-full transition-all duration-300 ${
-        scrolled
-          ? "border-b border-border bg-background/95 backdrop-blur-lg shadow-sm"
-          : "border-b border-transparent bg-background/50 backdrop-blur-sm"
-      }`}
-    >
-      <div className="container flex h-16 items-center justify-between">
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-2.5 group">
-          <div className="relative flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-primary-foreground transition-transform duration-300 group-hover:scale-105">
-            <BookOpen className="h-5 w-5" />
-          </div>
-          <span className="text-lg font-bold tracking-tight">
-            <span className="text-primary">Chhatro</span>
-            <span className="text-foreground">Bondhu</span>
-          </span>
-        </Link>
+    <header className="navbar">
+      <div className="container-wide">
+        <div className="navbar-inner">
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-3 group">
+            <div className="relative flex h-8 w-8 items-center justify-center rounded-md bg-gradient-to-br from-primary to-accent text-foreground transition-all duration-300 group-hover:shadow-lg group-hover:shadow-primary/30">
+              <BookOpen className="h-4 w-4" />
+            </div>
+            <span className="text-base font-bold tracking-tight hidden sm:inline">
+              <span className="text-primary">Chhatro</span>
+              <span className="text-foreground">Bondhu</span>
+            </span>
+          </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-1">
+        <nav className="hidden lg:flex items-center gap-0.5">
           {navLinks.map((link) => {
             const active = isActive(link.href);
             const isAnchor = link.href.startsWith("/#");
 
-            const linkClasses = `relative px-4 py-2 text-sm font-medium transition-colors duration-200 rounded-lg ${
+            const linkClasses = `relative px-3 py-2 text-sm font-medium transition-all duration-200 rounded-md ${
               active
-                ? "text-primary bg-primary/5"
-                : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                ? "text-primary bg-primary/10 border border-primary/30"
+                : "text-muted-foreground hover:text-foreground hover:bg-muted/30"
             }`;
 
             return isAnchor ? (

@@ -4,199 +4,274 @@
 @tailwind components;
 @tailwind utilities;
 
-/* -----------------------------
-   Design System Variables (HSL)
-   Clean, Modern Education Tech Palette
------------------------------ */
+/* ========================================
+   GITHUB CODESPACES DESIGN SYSTEM
+   Premium Dark Developer Aesthetic
+======================================== */
+
 @layer base {
   :root {
-    /* Core Backgrounds */
-    --background: 0 0% 100%;
-    --foreground: 220 14% 10%;
-
-    /* Cards & Surfaces */
-    --card: 0 0% 100%;
-    --card-foreground: 220 14% 10%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 14% 10%;
-
-    /* Primary - Refined Teal (Focus & Clarity) */
-    --primary: 168 76% 36%;
-    --primary-foreground: 0 0% 100%;
-
-    /* Secondary - Soft neutral */
-    --secondary: 220 14% 96%;
-    --secondary-foreground: 220 14% 20%;
-
-    /* Muted - Subtle backgrounds */
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 10% 46%;
-
-    /* Accent - Warm Amber (Energy & Achievement) */
-    --accent: 38 92% 50%;
-    --accent-foreground: 220 14% 10%;
-
+    /* Deep Black Base */
+    --background: 220 13% 6%;
+    --foreground: 210 40% 98%;
+    
+    /* Dark Navy Surfaces */
+    --card: 215 25% 10%;
+    --card-foreground: 210 40% 98%;
+    
+    --popover: 215 25% 10%;
+    --popover-foreground: 210 40% 98%;
+    
+    /* Primary - Electric Blue */
+    --primary: 202 100% 50%;
+    --primary-foreground: 220 13% 6%;
+    
+    /* Secondary - Dark Navy */
+    --secondary: 215 25% 15%;
+    --secondary-foreground: 210 40% 98%;
+    
+    /* Muted - Dark Gray */
+    --muted: 215 14% 20%;
+    --muted-foreground: 215 13% 55%;
+    
+    /* Accent - Purple Violet */
+    --accent: 270 100% 55%;
+    --accent-foreground: 220 13% 6%;
+    
     /* Destructive */
-    --destructive: 0 72% 51%;
-    --destructive-foreground: 0 0% 100%;
-
-    /* Borders & Inputs */
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 168 76% 36%;
-
-    --radius: 0.625rem;
-
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 220 13% 6%;
+    
+    /* Borders */
+    --border: 215 20% 16%;
+    --input: 215 20% 16%;
+    --ring: 202 100% 50%;
+    
+    --radius: 0.5rem;
+    
     /* Sidebar */
-    --sidebar-background: 220 14% 98%;
-    --sidebar-foreground: 220 14% 10%;
-
-    /* Chart Colors - Harmonious */
-    --chart-1: 168 76% 36%;
-    --chart-2: 38 92% 50%;
-    --chart-3: 200 80% 50%;
-    --chart-4: 340 75% 55%;
-    --chart-5: 142 71% 45%;
-
+    --sidebar-background: 215 25% 10%;
+    --sidebar-foreground: 210 40% 98%;
+    
+    /* Status Colors */
+    --success: 120 100% 40%;
+    --warning: 38 92% 50%;
+    
+    /* Chart Colors */
+    --chart-1: 202 100% 50%;
+    --chart-2: 270 100% 55%;
+    --chart-3: 120 100% 40%;
+    --chart-4: 38 92% 50%;
+    --chart-5: 0 84% 60%;
+    
     --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
                  'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
   }
-
-  .dark {
-    /* Dark Mode - Rich, Professional */
-    --background: 222 47% 6%;
-    --foreground: 210 40% 98%;
-
-    --card: 222 47% 9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222 47% 9%;
-    --popover-foreground: 210 40% 98%;
-
-    /* Primary - Brighter Teal for dark */
-    --primary: 168 76% 45%;
-    --primary-foreground: 222 47% 6%;
-
-    /* Secondary */
-    --secondary: 217 33% 17%;
-    --secondary-foreground: 210 40% 90%;
-
-    /* Muted */
-    --muted: 217 33% 14%;
-    --muted-foreground: 215 20% 55%;
-
-    /* Accent - Warm Amber */
-    --accent: 38 92% 55%;
-    --accent-foreground: 222 47% 6%;
-
-    /* Destructive */
-    --destructive: 0 72% 55%;
-    --destructive-foreground: 0 0% 100%;
-
-    /* Borders */
-    --border: 217 33% 18%;
-    --input: 217 33% 18%;
-    --ring: 168 76% 45%;
-
-    /* Sidebar */
-    --sidebar-background: 222 47% 8%;
-    --sidebar-foreground: 210 40% 98%;
-  }
-
-  /* -----------------------------
-     Global Element Styles
-  ----------------------------- */
+  
   body {
     @apply bg-background text-foreground antialiased;
     font-family: var(--font-sans);
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
-
-  /* Smooth cursor transitions without custom SVG cursors */
+  
+  /* Smooth cursor transitions */
   a, button, [role="button"], input[type="submit"], input[type="button"] {
     cursor: pointer;
   }
-
-  /* Subtle hover transforms */
-  a, button {
-    position: relative;
-    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  input, textarea, select, button {
-    @apply border border-border;
-  }
-
-  /* Better focus states */
+  
+  /* Focus states */
   *:focus-visible {
     @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
   }
+  
+  input, textarea, select, button {
+    @apply border border-border;
+  }
 }
 
-/* -----------------------------
-   Animations & Effects
------------------------------ */
+/* ========================================
+   BACKGROUND EFFECTS & TEXTURES
+======================================== */
+
 @layer utilities {
-  .animate-fade-in {
-    animation: fade-in 0.5s ease-out backwards;
+  /* Radial Glow Background */
+  .bg-glow {
+    @apply relative overflow-hidden;
+    background: radial-gradient(
+      circle at center,
+      rgba(88, 166, 255, 0.15) 0%,
+      rgba(88, 166, 255, 0.08) 25%,
+      transparent 60%
+    );
   }
-
-  .animate-fade-in-up {
-    animation: fade-in-up 0.6s ease-out backwards;
+  
+  /* Deep Black Background with Subtle Noise */
+  .bg-noise {
+    background-image: 
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 2px,
+        rgba(255, 255, 255, 0.01) 2px,
+        rgba(255, 255, 255, 0.01) 4px
+      );
   }
-
-  .animate-slide-up {
-    animation: slide-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) backwards;
-  }
-
-  .animate-scale-in {
-    animation: scale-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) backwards;
-  }
-
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
-
-  .animate-pulse-subtle {
-    animation: pulse-subtle 3s ease-in-out infinite;
-  }
-
-  /* Hover Effects */
-  .hover-lift {
-    @apply transition-all duration-300;
-  }
-
-  .hover-lift:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px -12px rgba(0, 0, 0, 0.15);
-  }
-
-  /* Glass Effect */
-  .glass {
-    @apply bg-background/80 backdrop-blur-xl border border-border/50;
-  }
-
-  /* Gradient Text */
-  .text-gradient {
-    @apply bg-gradient-to-r from-primary via-primary to-accent bg-clip-text text-transparent;
-  }
-
-  /* Card Glow on Hover */
-  .card-glow {
+  
+  /* Gradient Divider */
+  .divider-fade {
     @apply relative;
   }
+  
+  .divider-fade::before {
+    content: "";
+    @apply absolute inset-x-0 h-px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      hsl(48, 166, 255, 0.3),
+      transparent
+    );
+  }
+  
+  /* Glassmorphism Effect */
+  .glass {
+    @apply bg-card/50 backdrop-blur-2xl border border-border/50;
+  }
+  
+  .glass-strong {
+    @apply bg-card/80 backdrop-blur-xl border border-border/80;
+  }
+}
 
+/* ========================================
+   TYPOGRAPHY & TEXT EFFECTS
+======================================== */
+
+@layer utilities {
+  /* Hero Headline */
+  .text-hero {
+    @apply text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground;
+  }
+  
+  /* Gradient Text */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent;
+  }
+  
+  /* Glow Text */
+  .text-glow {
+    @apply relative;
+    text-shadow: 0 0 20px rgba(88, 166, 255, 0.5);
+  }
+  
+  /* Muted Text */
+  .text-muted {
+    @apply text-muted-foreground;
+  }
+}
+
+/* ========================================
+   BUTTON STYLES
+======================================== */
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-md;
+    @apply transition-all duration-200;
+    @apply hover:opacity-90 hover:shadow-lg hover:shadow-primary/20;
+    @apply active:scale-95;
+  }
+  
+  .btn-primary-glow {
+    @apply btn-primary;
+    box-shadow: 0 0 20px rgba(88, 166, 255, 0.4);
+  }
+  
+  .btn-primary-glow:hover {
+    box-shadow: 0 0 30px rgba(88, 166, 255, 0.6), inset 0 0 20px rgba(88, 166, 255, 0.2);
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 bg-secondary text-secondary-foreground font-semibold rounded-md;
+    @apply border border-border transition-all duration-200;
+    @apply hover:bg-secondary/80 hover:border-primary/50;
+  }
+  
+  .btn-ghost {
+    @apply px-6 py-3 text-foreground font-semibold rounded-md;
+    @apply transition-all duration-200;
+    @apply hover:bg-muted hover:text-primary;
+  }
+}
+
+/* ========================================
+   CARD & CONTAINER STYLES
+======================================== */
+
+@layer components {
+  .card-base {
+    @apply bg-card border border-border rounded-lg p-6;
+    @apply transition-all duration-300;
+  }
+  
+  .card-hover {
+    @apply card-base;
+    @apply hover:border-primary/50 hover:bg-card/80;
+    @apply hover:shadow-lg hover:shadow-primary/10;
+    @apply hover:-translate-y-1;
+  }
+  
+  .card-glow {
+    @apply card-base relative;
+  }
+  
   .card-glow::before {
     content: "";
-    @apply absolute -inset-0.5 rounded-xl bg-gradient-to-r from-primary/20 to-accent/20 opacity-0 blur-xl transition-opacity duration-500;
+    @apply absolute -inset-0.5 rounded-lg bg-gradient-to-br from-primary/20 to-accent/20;
+    @apply opacity-0 blur-xl transition-opacity duration-500 -z-10;
   }
-
+  
   .card-glow:hover::before {
     @apply opacity-100;
   }
+}
 
-  /* Keyframes */
+/* ========================================
+   ANIMATIONS
+======================================== */
+
+@layer utilities {
+  /* Fade In */
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out;
+  }
+  
+  /* Fade In & Slide Up */
+  .animate-fade-up {
+    animation: fade-up 0.8s ease-out;
+  }
+  
+  /* Floating Animation */
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+  
+  /* Pulse Glow */
+  .animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+  
+  /* Scale In */
+  .animate-scale-in {
+    animation: scale-in 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  /* Tab Slide */
+  .animate-tab-slide {
+    animation: tab-slide 0.3s ease-out;
+  }
+  
+  /* Count Up Numbers */
   @keyframes fade-in {
     from {
       opacity: 0;
@@ -205,8 +280,8 @@
       opacity: 1;
     }
   }
-
-  @keyframes fade-in-up {
+  
+  @keyframes fade-up {
     from {
       opacity: 0;
       transform: translateY(20px);
@@ -216,18 +291,25 @@
       transform: translateY(0);
     }
   }
-
-  @keyframes slide-up {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
     }
-    to {
-      opacity: 1;
-      transform: translateY(0);
+    50% {
+      transform: translateY(-16px);
     }
   }
-
+  
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(88, 166, 255, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 30px rgba(88, 166, 255, 0.6);
+    }
+  }
+  
   @keyframes scale-in {
     from {
       opacity: 0;
@@ -238,26 +320,18 @@
       transform: scale(1);
     }
   }
-
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0px);
+  
+  @keyframes tab-slide {
+    from {
+      transform: translateX(-10px);
+      opacity: 0;
     }
-    50% {
-      transform: translateY(-12px);
-    }
-  }
-
-  @keyframes pulse-subtle {
-    0%, 100% {
+    to {
+      transform: translateX(0);
       opacity: 1;
     }
-    50% {
-      opacity: 0.7;
-    }
   }
-
-  /* Smooth scrolling */
+  
   @media (prefers-reduced-motion: no-preference) {
     html {
       scroll-behavior: smooth;
@@ -265,22 +339,60 @@
   }
 }
 
-/* Custom Scrollbar - Minimal */
+/* ========================================
+   SCROLLBAR STYLING
+======================================== */
+
 @layer utilities {
   ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
   }
-
+  
   ::-webkit-scrollbar-track {
-    @apply bg-transparent;
+    @apply bg-background;
   }
-
+  
   ::-webkit-scrollbar-thumb {
     @apply bg-border rounded-full;
+    @apply hover:bg-primary/50;
   }
+}
 
-  ::-webkit-scrollbar-thumb:hover {
-    @apply bg-muted-foreground/30;
+/* ========================================
+   NAVBAR STYLING
+======================================== */
+
+@layer components {
+  .navbar {
+    @apply sticky top-0 z-50 w-full backdrop-blur-2xl;
+    background: linear-gradient(
+      to bottom,
+      hsl(220, 13%, 6%, 0.95),
+      hsl(220, 13%, 6%, 0.8)
+    );
+    border-bottom: 1px solid hsl(215, 20%, 16%);
+  }
+  
+  .navbar-inner {
+    @apply flex items-center justify-between px-4 md:px-8 py-3;
+  }
+}
+
+/* ========================================
+   RESPONSIVE UTILITIES
+======================================== */
+
+@layer utilities {
+  .container-narrow {
+    @apply max-w-2xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-wide {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
   }
 }

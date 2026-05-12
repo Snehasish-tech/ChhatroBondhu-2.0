@@ -4,43 +4,58 @@ import AchievementsCard from "@/components/dashboard/AchievementsCard";
 import ProgressCharts from "@/components/dashboard/ProgressCharts";
 import RecommendationsCard from "@/components/dashboard/RecommendationsCard";
 import QuickStatsBar from "@/components/dashboard/QuickStatsBar";
-import { TrendingUp } from "lucide-react";
+import { TrendingUp, Sparkles } from "lucide-react";
 
 const Dashboard = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="container mx-auto px-4 py-8 pt-24">
-        <div className="max-w-7xl mx-auto">
+      <main className="container-wide mx-auto py-8 pt-32">
+        <div>
           {/* Page Header */}
-          <div className="mb-8">
-            <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 border border-primary/20 text-sm font-medium text-primary mb-4">
-              <TrendingUp className="h-4 w-4" />
-              Your Progress
+          <div className="mb-12 space-y-4 animate-fade-up">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 backdrop-blur-sm">
+              <Sparkles className="h-4 w-4 text-primary" />
+              <span className="text-xs font-bold text-primary uppercase tracking-wide">
+                Dashboard
+              </span>
             </div>
-            <h1 className="text-3xl font-bold text-foreground mb-2">
-              Welcome back, Student!
-            </h1>
-            <p className="text-muted-foreground">
-              Track your progress and keep up the momentum.
-            </p>
+            <div>
+              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-2 tracking-tight">
+                Welcome back! 
+                <span className="text-gradient"> Keep Learning</span>
+              </h1>
+              <p className="text-lg text-muted-foreground max-w-2xl">
+                Track your progress, maintain your streak, and achieve your learning goals with AI-powered insights.
+              </p>
+            </div>
           </div>
 
           {/* Quick Stats */}
-          <QuickStatsBar />
+          <div className="mb-8 animate-fade-up" style={{ animationDelay: "0.1s" }}>
+            <QuickStatsBar />
+          </div>
 
-          {/* Main Grid */}
-          <div className="grid gap-6 lg:grid-cols-3 mt-8">
+          {/* Main Dashboard Grid */}
+          <div className="grid gap-6 lg:grid-cols-3 auto-rows-max" style={{ animationDelay: "0.2s" }}>
             {/* Left Column - Streak & Achievements */}
             <div className="space-y-6">
-              <StudyStreakCard />
-              <AchievementsCard />
+              <div className="animate-fade-up" style={{ animationDelay: "0.25s" }}>
+                <StudyStreakCard />
+              </div>
+              <div className="animate-fade-up" style={{ animationDelay: "0.3s" }}>
+                <AchievementsCard />
+              </div>
             </div>
 
-            {/* Middle & Right - Charts */}
+            {/* Right Column - Charts & Recommendations */}
             <div className="lg:col-span-2 space-y-6">
-              <ProgressCharts />
-              <RecommendationsCard />
+              <div className="animate-fade-up" style={{ animationDelay: "0.35s" }}>
+                <ProgressCharts />
+              </div>
+              <div className="animate-fade-up" style={{ animationDelay: "0.4s" }}>
+                <RecommendationsCard />
+              </div>
             </div>
           </div>
         </div>

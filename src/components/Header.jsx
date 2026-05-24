@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { BookOpen, Menu, X, LogOut, User, ChevronRight } from "lucide-react";
+import { BookOpen, Menu, X, LogOut, User } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle";
 import { useAuth } from "@/contexts/AuthContext";
@@ -41,36 +41,27 @@ const Header = () => {
   };
 
   return (
-    <header
-      className={`fixed top-0 z-50 w-full transition-all duration-300 ${
-        scrolled
-          ? "border-b border-border bg-background/95 backdrop-blur-lg shadow-sm"
-          : "border-b border-transparent bg-background/50 backdrop-blur-sm"
-      }`}
-    >
-      <div className="container flex h-16 items-center justify-between">
+    <header className={`landing-topbar ${scrolled ? "is-scrolled" : ""}`}>
+      <div className="landing-frame landing-topbar-inner">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2.5 group">
-          <div className="relative flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-primary-foreground transition-transform duration-300 group-hover:scale-105">
+        <Link to="/" className="landing-brand">
+          <span className="landing-brand-badge">
             <BookOpen className="h-5 w-5" />
-          </div>
+          </span>
           <span className="text-lg font-bold tracking-tight">
-            <span className="text-primary">Chhatro</span>
-            <span className="text-foreground">Bondhu</span>
+            <span className="text-[#0f2a3f]">Chhatro</span>
+            <span className="text-[#0077b6]">Bondhu</span>
           </span>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-1">
+        <nav className="landing-menu hidden lg:flex">
           {navLinks.map((link) => {
             const active = isActive(link.href);
             const isAnchor = link.href.startsWith("/#");
-
-            const linkClasses = `relative px-4 py-2 text-sm font-medium transition-colors duration-200 rounded-lg ${
-              active
-                ? "text-primary bg-primary/5"
-                : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
-            }`;
+            const linkClasses = active
+              ? "text-[#0f2a3f] bg-[#eaf3fb]"
+              : "text-[#284660]";
 
             return isAnchor ? (
               <a key={link.name} href={link.href} className={linkClasses}>
@@ -85,59 +76,63 @@ const Header = () => {
         </nav>
 
         {/* Desktop Actions */}
-        <div className="hidden lg:flex items-center gap-2">
+        <div className="landing-cta-row hidden lg:flex">
           <ThemeToggle />
 
           {user ? (
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button
-                  variant="ghost"
-                  className="relative h-9 w-9 rounded-full"
-                >
-                  <Avatar className="h-9 w-9">
-                    <AvatarFallback className="bg-primary/10 text-primary font-medium">
-                      {user.email?.charAt(0).toUpperCase()}
-                    </AvatarFallback>
-                  </Avatar>
-                </Button>
-              </DropdownMenuTrigger>
-
-              <DropdownMenuContent align="end" className="w-56">
-                <div className="p-3">
-                  <p className="text-sm font-medium">
-                    {user.user_metadata?.full_name || "Student"}
-                  </p>
-                  <p className="text-xs text-muted-foreground">{user.email}</p>
-                </div>
-
-                <DropdownMenuSeparator />
-
-                <DropdownMenuItem asChild>
-                  <Link to="/dashboard" className="flex items-center">
-                    <User className="mr-2 h-4 w-4" />
-                    Dashboard
-                  </Link>
-                </DropdownMenuItem>
-
-                <DropdownMenuSeparator />
-
-                <DropdownMenuItem
-                  onClick={signOut}
-                  className="text-destructive focus:text-destructive"
-                >
-                  <LogOut className="mr-2 h-4 w-4" />
-                  Sign out
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          ) : (
-            <Button size="sm" asChild className="gap-1.5">
-              <Link to="/auth">
-                Get Started
-                <ChevronRight className="h-4 w-4" />
+            <>
+              <Link to="/dashboard" className="landing-btn-light">
+                Dashboard
               </Link>
-            </Button>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    className="relative h-10 w-10 rounded-xl bg-white/70 border border-[#d8e5f1]"
+                  >
+                    <Avatar className="h-9 w-9">
+                      <AvatarFallback className="bg-[#eaf3fb] text-[#0077b6] font-semibold">
+                        {user.email?.charAt(0).toUpperCase()}
+                      </AvatarFallback>
+                    </Avatar>
+                  </Button>
+                </DropdownMenuTrigger>
+
+                <DropdownMenuContent align="end" className="w-56">
+                  <div className="p-3">
+                    <p className="text-sm font-medium">
+                      {user.user_metadata?.full_name || "Student"}
+                    </p>
+                    <p className="text-xs text-muted-foreground">
+                      {user.email}
+                    </p>
+                  </div>
+
+                  <DropdownMenuSeparator />
+
+                  <DropdownMenuItem asChild>
+                    <Link to="/dashboard" className="flex items-center">
+                      <User className="mr-2 h-4 w-4" />
+                      Dashboard
+                    </Link>
+                  </DropdownMenuItem>
+
+                  <DropdownMenuSeparator />
+
+                  <DropdownMenuItem
+                    onClick={signOut}
+                    className="text-destructive focus:text-destructive"
+                  >
+                    <LogOut className="mr-2 h-4 w-4" />
+                    Sign out
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </>
+          ) : (
+            <Link to="/auth" className="landing-btn-main">
+              Get Started
+            </Link>
           )}
         </div>
 
@@ -145,7 +140,7 @@ const Header = () => {
         <div className="flex lg:hidden items-center gap-2">
           <ThemeToggle />
           <button
-            className="p-2 text-foreground rounded-lg hover:bg-muted/50 transition-colors"
+            className="p-2 rounded-lg border border-[#d8e5f1] bg-white/80"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? (
@@ -159,16 +154,14 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-border bg-background/95 backdrop-blur-lg">
-          <nav className="container py-4 flex flex-col gap-1">
+        <div className="lg:hidden border-t border-[#d8e5f1] bg-white/95 backdrop-blur-lg">
+          <nav className="landing-frame py-4 flex flex-col gap-1">
             {navLinks.map((link) => {
               const isAnchor = link.href.startsWith("/#");
               const active = isActive(link.href);
 
               const linkClasses = `text-sm font-medium py-2.5 px-3 rounded-lg transition-colors ${
-                active
-                  ? "text-primary bg-primary/5"
-                  : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                active ? "text-[#0f2a3f] bg-[#eaf3fb]" : "text-[#284660]"
               }`;
 
               return isAnchor ? (
@@ -192,7 +185,7 @@ const Header = () => {
               );
             })}
 
-            <div className="mt-3 pt-3 border-t border-border">
+            <div className="mt-3 pt-3 border-t border-[#d8e5f1]">
               {user ? (
                 <Button
                   variant="outline"
@@ -203,11 +196,13 @@ const Header = () => {
                   Sign out
                 </Button>
               ) : (
-                <Button asChild className="w-full">
-                  <Link to="/auth" onClick={() => setMobileMenuOpen(false)}>
-                    Get Started
-                  </Link>
-                </Button>
+                <Link
+                  to="/auth"
+                  className="landing-btn-main w-full justify-center"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Get Started
+                </Link>
               )}
             </div>
           </nav>

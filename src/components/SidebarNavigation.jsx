@@ -23,6 +23,8 @@ import {
   Box,
   Heart,
   Calendar,
+  Calculator,
+  Share2,
 } from "lucide-react";
 
 const navItems = [
@@ -68,6 +70,13 @@ const navItems = [
       { label: "Challenge Mode", icon: Gamepad2, href: "/challenge-mode" },
     ],
   },
+  {
+    title: "Academic Tools",
+    items: [
+      { label: "CGPA Calculator", icon: Calculator, href: "/cgpa-calculator" },
+      { label: "Notes Sharing", icon: Share2, href: "/notes-sharing" },
+    ],
+  },
 ];
 
 const SidebarNavigation = () => {
@@ -84,12 +93,14 @@ const SidebarNavigation = () => {
   const isActive = (href) => location.pathname === href;
 
   return (
-    <div className="flex flex-col h-full bg-sidebar text-sidebar-foreground">
+    <div className="flex flex-col h-full bg-white text-[#0f2a3f]">
       {/* Logo Section */}
-      <div className="p-4 border-b">
+      <div className="p-4 border-b border-[#d4e8f7] bg-gradient-to-r from-[#f0fafe] to-[#f9fdff]">
         <Link to="/dashboard" className="flex items-center gap-2 font-bold text-lg">
-          <Sparkles className="w-6 h-6 text-primary" />
-          <span>Study AI</span>
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#0077b6] to-[#00a6fb] flex items-center justify-center">
+            <Sparkles className="w-5 h-5 text-white" />
+          </div>
+          <span className="text-[#0f2a3f]">Study AI</span>
         </Link>
       </div>
 
@@ -98,7 +109,7 @@ const SidebarNavigation = () => {
         <nav className="p-3 space-y-4">
           {navItems.map((section) => (
             <div key={section.title}>
-              <h3 className="px-3 text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">
+              <h3 className="px-3 text-xs font-semibold text-[#0077b6] uppercase tracking-wider mb-2">
                 {section.title}
               </h3>
               <div className="space-y-1">
@@ -109,8 +120,10 @@ const SidebarNavigation = () => {
                       <Button
                         variant={isActive(item.href) ? "secondary" : "ghost"}
                         className={cn(
-                          "w-full justify-start gap-2 text-sm",
-                          isActive(item.href) && "bg-primary text-primary-foreground hover:bg-primary"
+                          "w-full justify-start gap-2 text-sm rounded-lg transition-all duration-200",
+                          isActive(item.href) 
+                            ? "bg-gradient-to-r from-[#0077b6] to-[#00a6fb] text-white hover:shadow-md" 
+                            : "text-[#284660] hover:bg-[#e8f4ff]"
                         )}
                       >
                         <Icon className="w-4 h-4" />
@@ -120,19 +133,19 @@ const SidebarNavigation = () => {
                   );
                 })}
               </div>
-              <Separator className="mt-3" />
+              <Separator className="mt-3 bg-[#d4e8f7]" />
             </div>
           ))}
         </nav>
       </ScrollArea>
 
       {/* Logout Button */}
-      <div className="p-3 border-t">
+      <div className="p-3 border-t border-[#d4e8f7] bg-gradient-to-t from-[#f0fafe] to-transparent">
         <Button
           onClick={handleLogout}
           disabled={isLoading}
           variant="outline"
-          className="w-full gap-2"
+          className="w-full gap-2 border-[#b8d5ea] text-[#0077b6] hover:bg-[#e8f4ff]"
         >
           <LogOut className="w-4 h-4" />
           <span>{isLoading ? "Logging out..." : "Logout"}</span>

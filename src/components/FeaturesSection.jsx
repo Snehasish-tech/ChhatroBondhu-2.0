@@ -15,10 +15,12 @@ import {
   Trophy,
   BookOpen,
   Sparkles,
+  Calculator,
+  Share2,
 } from "lucide-react";
 
 const FeaturesSection = () => {
-  const features = [
+  const baseFeatures = [
     {
       icon: Brain,
       title: "AI Study Assistant",
@@ -124,36 +126,49 @@ const FeaturesSection = () => {
         "Generate custom quizzes from your notes and study materials instantly.",
       path: "/ai-quiz-generator",
     },
+    {
+      icon: Calculator,
+      title: "CGPA Calculator",
+      description:
+        "Track your academic performance and calculate your cumulative GPA in real-time.",
+      path: "/cgpa-calculator",
+    },
+    {
+      icon: Share2,
+      title: "Notes Sharing Hub",
+      description:
+        "Create, organize, and share your study notes with classmates and friends.",
+      path: "/notes-sharing",
+    },
   ];
 
+  // Dynamic cycling of deep-blue to light-blue colors
+  const colorCycle = [
+    { gradient: "from-[#0f2a3f] to-[#005c99]", bgGradient: "from-[#e8f4ff] to-[#f0fafe]" }, // Deep Blue
+    { gradient: "from-[#005c99] to-[#0077b6]", bgGradient: "from-[#f0fafe] to-[#f9fdff]" }, // Mid Blue
+    { gradient: "from-[#0077b6] to-[#00a6fb]", bgGradient: "from-[#f4faff] to-[#ffffff]" }, // Light Blue
+  ];
+
+  const features = baseFeatures.map((feature, index) => ({
+    ...feature,
+    ...colorCycle[index % 3]
+  }));
+
   return (
-    <section id="features" className="py-16 lg:py-24 bg-muted/30">
-      <div className="container">
-        {/* Section Header */}
-        <div className="text-center mb-12 lg:mb-16 max-w-3xl mx-auto">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 mb-6">
-            <Sparkles className="w-4 h-4 text-primary" />
-            <span className="text-sm font-semibold text-primary">
-              15+ Features
-            </span>
-          </div>
-
-          {/* Heading */}
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-foreground leading-tight">
-            Everything You Need to{" "}
-            <span className="text-primary">Excel</span>
+    <section id="features" className="landing-section">
+      <div className="landing-frame">
+        <div className="landing-section-head landing-reveal">
+          <span className="landing-tag">17+ Features</span>
+          <h2 className="font-display">
+            Everything You Need to <span className="text-[#0077b6]">Excel</span>
           </h2>
-
-          {/* Description */}
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p>
             Transform your study experience with our comprehensive suite of
             AI-powered tools designed for academic excellence.
           </p>
         </div>
 
-        {/* Features Grid */}
-        <div className="grid gap-5 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="landing-feature-grid">
           {features.map((feature) => (
             <FeatureCard key={feature.title} {...feature} />
           ))}

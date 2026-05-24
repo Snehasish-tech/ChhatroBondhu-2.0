@@ -1,32 +1,24 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const FeatureCard = ({ icon: Icon, title, description, path }) => {
+const FeatureCard = ({ icon: Icon, title, description, path, gradient, bgGradient }) => {
   return (
-    <Link to={path || "#"} className="block h-full group">
-      <div className="relative h-full rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:shadow-lg hover:border-primary/30 hover:-translate-y-1">
-        {/* Icon */}
-        <div className="mb-5">
-          <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 transition-colors duration-300 group-hover:bg-primary/15">
-            <Icon className="h-6 w-6 text-primary" />
+    <Link to={path || "#"} className="block h-full landing-reveal group">
+      <div className={`landing-feature-card relative bg-gradient-to-br ${bgGradient} border border-[#b8d5ea]/50`}>
+        {/* Glow effect */}
+        <div className={`absolute inset-0 rounded-xl bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
+        
+        <div className="relative z-10">
+          <div className={`landing-feature-icon bg-gradient-to-br ${gradient} shadow-lg`}>
+            <Icon className="h-5 w-5 text-white" />
           </div>
+          <h3 className="font-display text-[#0f2a3f]">{title}</h3>
+          <p className="text-[#284660]">{description}</p>
+          <span className="landing-feature-link text-[#0077b6] group-hover:text-[#005c99]">
+            Explore
+            <ArrowRight className="h-4 w-4" />
+          </span>
         </div>
-
-        {/* Title */}
-        <h3 className="mb-2 text-lg font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
-          {title}
-        </h3>
-
-        {/* Description */}
-        <p className="mb-5 text-sm text-muted-foreground leading-relaxed line-clamp-3">
-          {description}
-        </p>
-
-        {/* Link */}
-        <span className="inline-flex items-center gap-2 text-sm font-medium text-primary transition-all group-hover:gap-3">
-          Explore
-          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-        </span>
       </div>
     </Link>
   );

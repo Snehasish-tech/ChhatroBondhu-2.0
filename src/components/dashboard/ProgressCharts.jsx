@@ -46,45 +46,45 @@ const ProgressCharts = () => {
   ];
 
   return (
-    <Card className="border-border">
+    <Card className="border-[#b8d5ea] bg-gradient-to-br from-[#f9fdff] to-[#eef5fa] hover:shadow-lg transition-all duration-300">
       <CardHeader className="pb-3">
-        <CardTitle className="flex items-center gap-2 text-lg">
-          <TrendingUp className="h-5 w-5 text-primary" />
+        <CardTitle className="flex items-center gap-2 text-lg text-[#0f2a3f]">
+          <TrendingUp className="h-5 w-5 text-[#0077b6]" />
           Study Progress
         </CardTitle>
       </CardHeader>
       <CardContent>
         <Tabs defaultValue="weekly" className="w-full">
-          <TabsList className="grid w-full grid-cols-3 mb-4">
+          <TabsList className="grid w-full grid-cols-3 mb-4 bg-transparent">
             <TabsTrigger value="weekly">Weekly</TabsTrigger>
             <TabsTrigger value="subjects">Subjects</TabsTrigger>
             <TabsTrigger value="monthly">Monthly</TabsTrigger>
           </TabsList>
 
           <TabsContent value="weekly" className="mt-0">
-            <div className="h-64">
+            <div className="h-64 rounded-md p-2 bg-white shadow-sm">
               <ResponsiveContainer width="100%" height="100%">
                 <AreaChart data={weeklyData}>
                   <defs>
                     <linearGradient id="colorHours" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="5%" stopColor="hsl(271 91% 65%)" stopOpacity={0.3} />
-                      <stop offset="95%" stopColor="hsl(271 91% 65%)" stopOpacity={0} />
+                      <stop offset="5%" stopColor="#00a6fb" stopOpacity={0.25} />
+                      <stop offset="95%" stopColor="#00a6fb" stopOpacity={0} />
                     </linearGradient>
                   </defs>
-                  <CartesianGrid strokeDasharray="3 3" stroke="hsl(240 6% 90%)" />
-                  <XAxis dataKey="day" stroke="hsl(240 4% 46%)" fontSize={12} />
-                  <YAxis stroke="hsl(240 4% 46%)" fontSize={12} />
+                  <CartesianGrid strokeDasharray="3 3" stroke="#e6f2fb" />
+                  <XAxis dataKey="day" stroke="#284660" fontSize={12} />
+                  <YAxis stroke="#284660" fontSize={12} />
                   <Tooltip
                     contentStyle={{
-                      backgroundColor: "hsl(0 0% 100%)",
-                      border: "1px solid hsl(240 6% 90%)",
+                      backgroundColor: "#fff",
+                      border: "1px solid #e6f2fb",
                       borderRadius: "8px",
                     }}
                   />
                   <Area
                     type="monotone"
                     dataKey="hours"
-                    stroke="hsl(271 91% 65%)"
+                    stroke="#0077b6"
                     strokeWidth={2}
                     fill="url(#colorHours)"
                     name="Study Hours"
@@ -92,20 +92,20 @@ const ProgressCharts = () => {
                 </AreaChart>
               </ResponsiveContainer>
             </div>
-            <div className="mt-4 flex justify-center gap-6 text-sm">
+            <div className="mt-4 flex justify-center gap-6 text-sm text-[#284660]">
               <div className="flex items-center gap-2">
-                <div className="h-3 w-3 rounded-full bg-primary" />
-                <span className="text-muted-foreground">Total: 17.8 hours</span>
+                <div className="h-3 w-3 rounded-full bg-gradient-to-r from-[#0077b6] to-[#00a6fb]" />
+                <span>Total: 17.8 hours</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="text-muted-foreground">Avg Focus: 88%</span>
+                <span>Avg Focus: 88%</span>
               </div>
             </div>
           </TabsContent>
 
           <TabsContent value="subjects" className="mt-0">
             <div className="flex items-center gap-8">
-              <div className="h-64 w-64 flex-shrink-0">
+              <div className="h-64 w-64 flex-shrink-0 bg-white p-2 rounded-md shadow-sm">
                 <ResponsiveContainer width="100%" height="100%">
                   <PieChart>
                     <Pie
@@ -123,8 +123,8 @@ const ProgressCharts = () => {
                     </Pie>
                     <Tooltip
                       contentStyle={{
-                        backgroundColor: "hsl(0 0% 100%)",
-                        border: "1px solid hsl(240 6% 90%)",
+                        backgroundColor: "#fff",
+                        border: "1px solid #e6f2fb",
                         borderRadius: "8px",
                       }}
                     />
@@ -138,10 +138,10 @@ const ProgressCharts = () => {
                       className="h-3 w-3 rounded-full"
                       style={{ backgroundColor: subject.color }}
                     />
-                    <span className="flex-1 text-sm text-card-foreground">
+                    <span className="flex-1 text-sm text-[#0f2a3f]">
                       {subject.subject}
                     </span>
-                    <span className="text-sm font-medium text-muted-foreground">
+                    <span className="text-sm font-medium text-[#284660]">
                       {subject.hours}h
                     </span>
                   </div>
@@ -151,32 +151,32 @@ const ProgressCharts = () => {
           </TabsContent>
 
           <TabsContent value="monthly" className="mt-0">
-            <div className="h-64">
+            <div className="h-64 rounded-md p-2 bg-white shadow-sm">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={monthlyData}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="hsl(240 6% 90%)" />
-                  <XAxis dataKey="week" stroke="hsl(240 4% 46%)" fontSize={12} />
-                  <YAxis stroke="hsl(240 4% 46%)" fontSize={12} />
+                  <CartesianGrid strokeDasharray="3 3" stroke="#e6f2fb" />
+                  <XAxis dataKey="week" stroke="#284660" fontSize={12} />
+                  <YAxis stroke="#284660" fontSize={12} />
                   <Tooltip
                     contentStyle={{
-                      backgroundColor: "hsl(0 0% 100%)",
-                      border: "1px solid hsl(240 6% 90%)",
+                      backgroundColor: "#fff",
+                      border: "1px solid #e6f2fb",
                       borderRadius: "8px",
                     }}
                   />
-                  <Bar dataKey="hours" fill="hsl(271 91% 65%)" radius={[4, 4, 0, 0]} name="Actual" />
-                  <Bar dataKey="target" fill="hsl(240 5% 90%)" radius={[4, 4, 0, 0]} name="Target" />
+                  <Bar dataKey="hours" fill="#0077b6" radius={[6, 6, 0, 0]} name="Actual" />
+                  <Bar dataKey="target" fill="#e6f2fb" radius={[6, 6, 0, 0]} name="Target" />
                 </BarChart>
               </ResponsiveContainer>
             </div>
-            <div className="mt-4 flex justify-center gap-6 text-sm">
+            <div className="mt-4 flex justify-center gap-6 text-sm text-[#284660]">
               <div className="flex items-center gap-2">
-                <div className="h-3 w-3 rounded bg-primary" />
-                <span className="text-muted-foreground">Actual Hours</span>
+                <div className="h-3 w-3 rounded bg-gradient-to-r from-[#0077b6] to-[#00a6fb]" />
+                <span>Actual Hours</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="h-3 w-3 rounded bg-muted" />
-                <span className="text-muted-foreground">Target</span>
+                <div className="h-3 w-3 rounded bg-[#e6f2fb]" />
+                <span>Target</span>
               </div>
             </div>
           </TabsContent>

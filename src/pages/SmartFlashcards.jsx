@@ -9,6 +9,11 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const SmartFlashcards = () => {
+  const styles = {
+    page: 'landing-page min-h-screen bg-gradient-to-br from-[#f9fdff] to-[#eef5fa]',
+    badge: 'bg-[#e8f4ff] border-[#b8d5ea] text-[#0077b6]',
+    title: 'text-[#0f2a3f] font-display',
+  };
   const [flashcards, setFlashcards] = useState([
     { id: 1, front: "What is photosynthesis?", back: "The process by which plants convert light energy into chemical energy", deck: "Biology", mastery: 80 },
     { id: 2, front: "Newton's First Law", back: "An object at rest stays at rest and an object in motion stays in motion unless acted upon by an external force", deck: "Physics", mastery: 60 },

@@ -8,6 +8,11 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const YouTubeStudy = () => {
+  const styles = {
+    page: 'landing-page min-h-screen bg-gradient-to-br from-[#f9fdff] to-[#eef5fa]',
+    badge: 'bg-[#e8f4ff] border-[#b8d5ea] text-[#0077b6]',
+    title: 'text-[#0f2a3f] font-display',
+  };
   const [videoUrl, setVideoUrl] = useState("");
   const [videoData, setVideoData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);

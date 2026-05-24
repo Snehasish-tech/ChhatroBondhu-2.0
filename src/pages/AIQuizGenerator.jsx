@@ -10,6 +10,11 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 
 const AIQuizGenerator = () => {
+  const styles = {
+    page: 'landing-page min-h-screen bg-gradient-to-br from-[#f9fdff] to-[#eef5fa]',
+    badge: 'bg-[#e8f4ff] border-[#b8d5ea] text-[#0077b6]',
+    title: 'text-[#0f2a3f] font-display',
+  };
   const [notes, setNotes] = useState("");
   const [quizGenerated, setQuizGenerated] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState(0);

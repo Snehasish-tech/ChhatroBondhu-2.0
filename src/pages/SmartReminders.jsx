@@ -10,6 +10,11 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const SmartReminders = () => {
+  const styles = {
+    page: 'landing-page min-h-screen bg-gradient-to-br from-[#f9fdff] to-[#eef5fa]',
+    badge: 'bg-[#e8f4ff] border-[#b8d5ea] text-[#0077b6]',
+    title: 'text-[#0f2a3f] font-display',
+  };
   const [reminders, setReminders] = useState([
     { id: 1, title: "Study Mathematics", time: "09:00 AM", days: ["Mon", "Wed", "Fri"], enabled: true, subject: "Math" },
     { id: 2, title: "Review Physics Notes", time: "02:00 PM", days: ["Tue", "Thu"], enabled: true, subject: "Physics" },

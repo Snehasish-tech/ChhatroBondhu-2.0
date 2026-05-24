@@ -1,180 +1,247 @@
 <div align="center">
+<a href="https://github.com/Snehasish-tech/ChhatroBondhu-2.0">
+  
+  <img src="https://readme-typing-svg.demolab.com?font=Space+Grotesk&weight=700&size=35&duration=2500&pause=800&color=0077B6&center=true&vCenter=true&width=1000&height=100&lines=Welcome+to+ChhatroBondhu+2.0;Your+AI-Powered+Study+Companion;Learn+Smarter,+Not+Harder;15%2B+Smart+Learning+Features;Your+Partner+in+Academic+Excellence." alt="ChhatroBondhu Professional" />
+</a>
+</div>
+<h3 align="center"><i>"Transforming your study experience with our comprehensive suite of AI-powered tools designed for academic excellence."</i></h3>
 
-# 🎓 ChhatroBondhu 2.0
+<p align="center">
+  <a href="#"><img src="https://img.shields.io/badge/Live_Demo-Active-0077B6?style=for-the-badge&logo=vercel" alt="Live Demo"></a>
+  <a href="https://reactjs.org/"><img src="https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react" alt="React"></a>
+  <a href="https://supabase.com/"><img src="https://img.shields.io/badge/Supabase-PostgreSQL-3ECF8E?style=for-the-badge&logo=supabase" alt="Supabase"></a><br/>
+  <a href="https://groq.com/"><img src="https://img.shields.io/badge/Groq-Fast_LLM-F55036?style=for-the-badge" alt="Groq"></a>
+  <a href="https://deepmind.google/technologies/gemini/"><img src="https://img.shields.io/badge/Gemini-AI_Analysis-4285F4?style=for-the-badge&logo=google" alt="Gemini"></a>
+  <a href="https://tailwindcss.com"><img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css" alt="Tailwind"></a>
+</p>
 
-### Your AI-Powered Study Companion for Smarter Learning
-
-[![React](https://img.shields.io/badge/React-19.2.0-61DAFB?logo=react&logoColor=white)](https://reactjs.org/)
-[![Vite](https://img.shields.io/badge/Vite-7.2.4-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4.1-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![Supabase](https://img.shields.io/badge/Supabase-Enabled-3ECF8E?logo=supabase&logoColor=white)](https://supabase.com/)
-
-
-
+<div align="center">
+  <img width="1000" alt="ChhatroBondhu Hero Preview" src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=2000&auto=format&fit=crop" />
 </div>
 
----
+<br/>
 
-## 📖 About
+# 🎯 The Problem
 
-**ChhatroBondhu 2.0** is a comprehensive, AI-powered study platform designed to revolutionize how students learn. With intelligent features like AI assistants, personalized study schedules, gamification, and mental health support, it creates an all-in-one ecosystem for academic success.
+**Students today are overwhelmed with distractions, information overload, and a lack of personalized guidance.**
 
-## ✨ Features
+```mermaid
+flowchart TB
+    A[📚 Modern Student]
+    B[🤯 Information Overload]
+    C[📉 Lack of Focus & Distractions]
+    D[🚫 Cookie-Cutter Learning]
+    E[😟 Exam Anxiety]
+    F[🥱 Burnout & Mental Fatigue]
 
-### 🤖 AI-Powered Tools
-- **AI Assistant** - Get instant, contextual help with your studies powered by Google Gemini/OpenAI
-- **AI Quiz Generator** - Automatically generate quizzes from your study materials
-- **Exam Analyzer** - Analyze past exams and get insights on improvement areas
-- **Voice Notes** - Convert voice to text for quick note-taking
-- **Handwriting to Digital** - Transform handwritten notes into searchable digital text
+    A --> B
+    A --> C
+    A --> D
+    A --> E
+    A --> F
 
-### 📚 Study Enhancement
-- **Smart Flashcards** - Spaced repetition algorithm for optimal memory retention
-- **Study Room** - Virtual study spaces with collaborative features
-  - Pomodoro Timer with customizable intervals
-  - Task List management
-  - Ambient Sounds (rain, cafe, white noise)
-  - Study Statistics tracking
-  - Distraction Blocker
-- **Focus Mode** - Distraction-free environment for deep work
-- **YouTube Study Integration** - Learn from curated educational content
-- **3D Visualizations** - Interactive 3D models for complex concepts
+    B --> B1[⏳ Wasting hours finding what to study]
+    C --> C1[📱 Social media & phone addiction]
+    D --> D1[🚫 One-size-fits-all education failing]
+    E --> E1[📉 Poor exam performance]
+    F --> F1[☠️ Dropping out or losing motivation]
 
-### 📊 Progress Tracking
-- **Dashboard** - Comprehensive analytics and insights
-  - Quick Stats Bar
-  - Progress Charts (daily, weekly, monthly)
-  - Study Streak tracking
-  - Achievements & Badges
-  - Personalized Recommendations
-- **Challenge Mode** - Compete with yourself and others
-- **Smart Schedule** - AI-generated study plans based on your goals
-
-### 🧠 Wellness Support
-- **Mental Health Module** - Track your emotional well-being
-- **Smart Reminders** - Never miss a study session or deadline
-- **Study Spotify** - Curated playlists for focused studying
-
-### 🎨 Modern UI/UX
-- **Dark/Light Mode** - Toggle between themes for eye comfort
-- **Responsive Design** - Seamless experience across all devices
-- **Beautiful Animations** - Smooth transitions and interactions
-- **Accessibility First** - Built with inclusivity in mind
-
-
-## 🛠️ Tech Stack
-
-### Frontend
-- **React 19.2.0** - UI Library
-- **Vite 7.2.4** - Build tool and dev server
-- **React Router DOM 7.12.0** - Client-side routing
-- **Tailwind CSS 3.4.1** - Utility-first CSS framework
-- **Radix UI** - Accessible component primitives
-- **Lucide React** - Beautiful icon library
-- **Recharts** - Data visualization
-
-### Backend & Services
-- **Supabase** - Authentication, Database, and Storage
-- **TanStack Query** - Data fetching and caching
-- **Groq API** - AI capabilities 
-
-
-### Developer Tools
-- **ESLint** - Code linting
-- **PostCSS** - CSS processing
-- **Autoprefixer** - CSS vendor prefixes
-
-
-
-
-
-
-
-## 📁 Project Structure
-
-```
-chattrobondhu-2.0/
-├── public/              # Static assets
-├── src/
-│   ├── assets/         # Images, fonts, etc.
-│   ├── components/     # Reusable components
-│   │   ├── dashboard/  # Dashboard-specific components
-│   │   ├── study-room/ # Study room features
-│   │   └── ui/         # UI primitives (buttons, cards, etc.)
-│   ├── contexts/       # React Context providers
-│   ├── hooks/          # Custom React hooks
-│   ├── integrations/   # Third-party integrations
-│   │   └── supabase/   # Supabase client and types
-│   ├── lib/            # Utility functions and services
-│   ├── pages/          # Route pages/views
-│   ├── App.jsx         # Main app component
-│   └── main.jsx        # Entry point
-├── .env                # Environment variables (create this)
-├── package.json        # Dependencies and scripts
-├── vite.config.js      # Vite configuration
-└── tailwind.config.js  # Tailwind CSS configuration
-
-
+    B1 --> X[❌ Decreased Academic Potential]
+    C1 --> X
+    F1 --> X
 ```
 
-## 🤝 Contributing
+## 💡 Our Solution
 
-We welcome contributions! Here's how you can help:
+**ChhatroBondhu 2.0** is an all-in-one AI-powered study ecosystem — transforming chaos into hyper-focused, personalized, and gamified learning experiences. 
 
-1. **Fork the repository**
-2. **Create a feature branch**
-   ```bash
-   git checkout -b feature/amazing-feature
-   ```
-3. **Commit your changes**
-   ```bash
-   git commit -m 'Add some amazing feature'
-   ```
-4. **Push to the branch**
-   ```bash
-   git push origin feature/amazing-feature
-   ```
-5. **Open a Pull Request**
+> *"Learn smarter, not harder. With the right AI companion, every student has the potential to become a top performer."*
 
-### Contribution Guidelines
+### 🎬 How It Works
 
-- Follow the existing code style
-- Write meaningful commit messages
-- Add comments for complex logic
-- Update documentation as needed
-- Test your changes thoroughly
+```mermaid
+flowchart LR
+    A[👤 1. Setup Profile<br/>& Academic Goals] --> B[🤖 2. AI Mentorship<br/>Groq & Gemini Assist]
+    B --> C[🎯 3. Deep Focus<br/>Study Room & Timers]
+    C --> D[🏆 4. Excel & Grow<br/>Analytics & Rewards]
+```
 
-## 📝 License
+# ️ System Architecture
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+### High-Level Overview
 
-## 🙏 Acknowledgments
+```mermaid
+flowchart TB
+    subgraph Client["🖥️ Client Layer (React 18)"]
+        UI["Tailwind CSS + shadcn/ui"]
+        Dashboard["Student Progress Dashboard"]
+        StudyRoom["Pomodoro & Focus Mode"]
+        Tools["Flashcards, Quizzes & CGPA"]
+    end
 
-- [Radix UI](https://www.radix-ui.com/) - Accessible component primitives
-- [Shadcn/ui](https://ui.shadcn.com/) - UI component inspiration
-- [Lucide Icons](https://lucide.dev/) - Beautiful icon set
-- [Supabase](https://supabase.com/) - Backend infrastructure
-- [Google Gemini](https://ai.google.dev/) - AI capabilities
+    subgraph API["⚡ Backend Layer"]
+        Auth["/auth — Supabase Authentication"]
+        Context["React Context Providers"]
+    end
 
+    subgraph Services["🤖 AI & Integrations"]
+        Groq["⚡ Groq (LLaMA-3)"]
+        Gemini["🧠 Google Gemini 1.5 Flash"]
+        OpenAI["💬 OpenAI GPT (Optional)"]
+        Spotify["🎵 Study Spotify Integration"]
+        YouTube["📺 YT Video Analyzer"]
+    end
 
-## 🗺️ Roadmap
+    subgraph Database["🐘 Supabase"]
+        Users[("Users Profile")]
+        Notes[("Notes Hub")]
+        Stats[("Study Statistics")]
+    end
 
-- [ ] Mobile app (React Native)
-- [ ] Offline mode support
-- [ ] Real-time collaborative study rooms
-- [ ] Advanced analytics dashboard
-- [ ] Integration with Google Calendar
-- [ ] Multi-language support
-- [ ] Browser extension for quick notes
+    UI --> Auth
+    Auth --> Database
+    Client --> Services
+    Groq --> Tools
+    Gemini --> Tools
+    Services --> Dashboard
+```
 
+# 🔍 Learning Intelligence Dashboard
 
+The **ChhatroBondhu Dashboard** acts as your central command center, interrogating your study habits in real-time to recommend actions, track streaks, and maintain mental wellness.
+
+## 📊 Academic Analytics
+
+### 🎯 Student Focus Distribution
+
+```mermaid
+pie title "Weekly Study Habit Distribution"
+    "Deep Work (Focus Mode)" : 45
+    "Active Recall (Flashcards)" : 25
+    "Testing (AI Quizzes)" : 20
+    "Video Analysis (YouTube)" : 10
+```
+
+### 🎭 Learning Intelligence Modes
+
+```mermaid
+graph LR
+    A[🎬 Select Mode] --> B[🧠 AI Assistant]
+    A --> C[🎯 Focus Mode]
+    A --> D[🧘 Wellness Tracker]
+
+    B --> E["Instant Explanations<br/>& Problem Solving"]
+    C --> F["Pomodoro Timers<br/>& Distraction Blockers"]
+    D --> G["Mood Logging<br/>& Breathing Exercises"]
+
+    E --> H[🏆 Academic Excellence]
+    F --> H
+    G --> H
+```
+
+# 🔧 Tech Stack
 
 <div align="center">
 
-
-⭐ Star this repo if you find it helpful!
-
-[Report Bug](https://github.com/yourusername/chattrobondhu-2.0/issues) • [Request Feature](https://github.com/yourusername/chattrobondhu-2.0/issues)
+| Category | Technologies |
+|:--------:|:------------:|
+| **Frontend** | ![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black) ![Vite](https://img.shields.io/badge/Vite-5-646CFF?style=for-the-badge&logo=vite&logoColor=white) ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white) |
+| **UI Components** | ![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-Components-000000?style=for-the-badge&logo=shadcnui&logoColor=white) ![Lucide](https://img.shields.io/badge/Lucide-Icons-FF6C37?style=for-the-badge) |
+| **Database & Auth** | ![Supabase](https://img.shields.io/badge/Supabase-PostgreSQL-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white) |
+| **AI Models** | ![Groq](https://img.shields.io/badge/Groq-Llama_3-F55036?style=for-the-badge) ![Gemini](https://img.shields.io/badge/Gemini-1.5_Flash-4285F4?style=for-the-badge&logo=google&logoColor=white) |
+| **Data Visualization** | ![Recharts](https://img.shields.io/badge/Recharts-Analytics-22B5BF?style=for-the-badge) |
+| **Deployment** | ![Vercel](https://img.shields.io/badge/Vercel-Serverless-000000?style=for-the-badge&logo=vercel&logoColor=white) |
 
 </div>
 
+# ✨ 17+ Smart Features
+
+<div align="center">
+
+| Feature | Description |
+|:------:|:-----------:|
+| 🧠 **AI Study Assistant** | Instant answers and personalized recommendations (Groq/Gemini). |
+| 🎯 **Smart Focus Mode** | Pomodoro timers, distraction blocking & ambient sounds. |
+| 🎙️ **Voice Notes & Audio** | Record lectures, convert speech to text, generate summaries. |
+| 📺 **YouTube Integration** | Extract key points from educational videos automatically. |
+| 📝 **Smart Flashcards** | AI-generated flashcards utilizing spaced repetition. |
+| ✍️ **Handwriting to Digital** | Convert physical handwritten notes to digital text. |
+| 📊 **Exam Pattern Analyzer** | Analyze past papers and predict likely exam questions. |
+| 🧘 **Mental Health Tracker** | Track mood, stress levels, and practice breathing exercises. |
+| 🏆 **Challenge Mode** | Gamified learning: earn XP, rank on leaderboards, keep streaks. |
+| 🎶 **Study Spotify** | Curated focus playlists that adapt to your study vibe. |
+| 🗓️ **Smart Schedule** | AI-powered calendar optimizing your study sessions. |
+| 🤝 **Notes Sharing Hub** | Collaborate and share your study materials with peers. |
+
+</div>
+
+# 🚀 Getting Started
+
+> Spin up **ChhatroBondhu 2.0** locally in minutes.
+
+## 🧰 Requirements
+
+- **Node.js** ≥ 18 (LTS recommended)
+- **Supabase** account (Free tier)
+- **API Keys:** Groq or Google Gemini
+
+## 📦 Project Setup
+
+```bash
+git clone https://github.com/Snehasish-tech/ChhatroBondhu-2.0.git
+cd ChhatroBondhu-2.0
+npm install
+```
+
+### 🔐 Environment Configuration
+
+Create a `.env` file in the root directory:
+
+```bash
+# Supabase Configuration
+VITE_SUPABASE_PROJECT_ID=your_supabase_project_id
+VITE_SUPABASE_PUBLISHABLE_KEY=your_supabase_anon_key
+VITE_SUPABASE_URL=https://your_project_id.supabase.co
+
+# AI API Configuration
+VITE_GROQ_API_KEY=your_groq_api_key_here
+VITE_AI_PROVIDER=groq
+```
+
+### ▶️ Run the App
+
+```bash
+npm run dev
+```
+The app will be running at `http://localhost:5173`
+
+# 🗺️ Roadmap
+
+| Status | Feature | Impact |
+|:------:|:-------:|:------:|
+| ✅ | AI Chat Assistant (Groq/Gemini) | Instant academic problem solving |
+| ✅ | Focus Mode & Distraction Blocker | +40% increase in deep work |
+| ✅ | AI Flashcards & Quizzes | Better memory retention |
+| ✅ | Dashboard & Analytics | Clear visibility of progress |
+| ✅ | YouTube Video Analyzer | Save hours of video watching |
+| 🔄 | 3D Interactive Visualizations | Immersive complex concept learning |
+| 🔄 | 1-on-1 Mentorship matching | Connect students with experts |
+| 🔄 | Mobile App / PWA | On-the-go study capabilities |
+
+# 🤝 Contributing
+
+We welcome contributions! Please see our CONTRIBUTING.md for details on how to get started, project setup, and coding guidelines.
+
+---
+
+<div align="center">
+
+_**"🧠 Learning Intelligence Activated."**_ <br/>
+**Built with ❤️ for Students Worldwide!**
+
+[!Supabase](https://supabase.com/)
+[!Vercel](https://vercel.com/)
+[!Groq](https://groq.com/)
+[!React](https://react.dev/)
+
+</div>

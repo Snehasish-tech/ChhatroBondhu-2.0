@@ -25,6 +25,8 @@ import ThreeDVisualizations from "./pages/ThreeDVisualizations";
 import ChallengeMode from "./pages/ChallengeMode";
 import SmartFlashcards from "./pages/SmartFlashcards";
 import AIQuizGenerator from "./pages/AIQuizGenerator";
+import CGPACalculator from "./pages/CGPACalculator";
+import NotesSharing from "./pages/NotesSharing";
 
 
 const queryClient = new QueryClient();
@@ -168,6 +170,22 @@ const App = () => (
               element={
                 <ProtectedLayout>
                   <AIQuizGenerator />
+                </ProtectedLayout>
+              }
+            />
+            <Route
+              path="/cgpa-calculator"
+              element={
+                <ProtectedLayout>
+                  <CGPACalculator />
+                </ProtectedLayout>
+              }
+            />
+            <Route
+              path="/notes-sharing"
+              element={
+                <ProtectedLayout>
+                  <NotesSharing />
                 </ProtectedLayout>
               }
             />

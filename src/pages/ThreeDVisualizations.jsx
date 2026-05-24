@@ -6,6 +6,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 
 const ThreeDVisualizations = () => {
+  const styles = {
+    page: 'landing-page min-h-screen bg-gradient-to-br from-[#f9fdff] to-[#eef5fa]',
+    badge: 'bg-[#e8f4ff] border-[#b8d5ea] text-[#0077b6]',
+    title: 'text-[#0f2a3f] font-display',
+  };
   const [selectedModel, setSelectedModel] = useState("dna");
 
   const models = [

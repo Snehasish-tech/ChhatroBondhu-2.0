@@ -16,20 +16,22 @@ const AchievementsCard = () => {
   const unlockedCount = achievements.filter((a) => a.unlocked).length;
 
   return (
-    <Card className="border-border">
+    <Card className="border-[#b8d5ea] bg-gradient-to-br from-[#f9fdff] to-[#eef5fa] hover:shadow-lg transition-all duration-250">
       <CardHeader className="pb-3">
         <div className="flex items-center justify-between">
-          <CardTitle className="flex items-center gap-2 text-lg">
-            <Trophy className="h-5 w-5 text-amber-500" />
+          <CardTitle className="flex items-center gap-2 text-lg text-[#0f2a3f]">
+            <div className="p-2 rounded-md bg-gradient-to-br from-[#0077b6] to-[#00a6fb]">
+              <Trophy className="h-5 w-5 text-white" />
+            </div>
             Achievements
           </CardTitle>
-          <span className="text-sm text-muted-foreground">
+          <span className="text-sm text-[#284660]">
             {unlockedCount}/{achievements.length}
           </span>
         </div>
       </CardHeader>
       <CardContent>
-        <div className="grid grid-cols-4 gap-3">
+        <div className="grid grid-cols-4 gap-4">
           {achievements.map((achievement, index) => (
             <div
               key={index}
@@ -37,17 +39,17 @@ const AchievementsCard = () => {
               title={`${achievement.name}: ${achievement.description}`}
             >
               <div
-                className={`h-12 w-12 rounded-xl flex items-center justify-center text-xl transition-transform hover:scale-110 ${
+                className={`h-12 w-12 rounded-xl flex items-center justify-center text-xl transition-transform transform-gpu hover:scale-110 ${
                   achievement.unlocked
-                    ? "bg-secondary"
-                    : "bg-muted grayscale opacity-50"
+                    ? "bg-gradient-to-br from-[#0077b6] to-[#00a6fb] text-white shadow-md"
+                    : "bg-[#e8f4ff] text-[#b8d5ea] grayscale opacity-70"
                 }`}
               >
                 {achievement.emoji}
               </div>
               <span
-                className={`text-xs mt-1 text-center truncate w-full ${
-                  achievement.unlocked ? "text-card-foreground" : "text-muted-foreground"
+                className={`text-xs mt-2 text-center truncate w-full ${
+                  achievement.unlocked ? "text-[#0f2a3f]" : "text-[#7b98a8]"
                 }`}
               >
                 {achievement.name}
@@ -57,17 +59,20 @@ const AchievementsCard = () => {
         </div>
 
         {/* Progress */}
-        <div className="mt-4 pt-4 border-t border-border">
-          <div className="flex justify-between text-sm mb-2">
-            <span className="text-muted-foreground">Progress</span>
-            <span className="font-medium text-card-foreground">
+        <div className="mt-5 pt-4 border-t border-[#d4e8f7]">
+          <div className="flex justify-between items-center text-sm mb-2">
+            <span className="text-[#284660]">Progress</span>
+            <span className="font-medium text-[#0f2a3f]">
               {Math.round((unlockedCount / achievements.length) * 100)}%
             </span>
           </div>
-          <div className="h-2 rounded-full bg-muted overflow-hidden">
+          <div className="h-3 rounded-full bg-[#eef6fb] overflow-hidden">
             <div
-              className="h-full rounded-full bg-primary transition-all"
-              style={{ width: `${(unlockedCount / achievements.length) * 100}%` }}
+              className="h-full rounded-full transition-all duration-500"
+              style={{
+                width: `${(unlockedCount / achievements.length) * 100}%`,
+                background: "linear-gradient(90deg,#0077b6,#00a6fb)",
+              }}
             />
           </div>
         </div>

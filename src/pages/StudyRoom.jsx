@@ -7,19 +7,19 @@ import { BookOpen } from "lucide-react";
 
 export default function StudyRoom() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="landing-page min-h-screen bg-gradient-to-br from-[#f9fdff] to-[#eef5fa]">
       <main className="container mx-auto px-4 py-8">
         
         {/* Page Header */}
         <div className="mb-8 text-center">
-          <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 border border-primary/20 text-sm font-medium text-primary mb-4">
+          <div className="inline-flex items-center gap-2 rounded-full bg-[#e8f4ff] px-4 py-1.5 border border-[#b8d5ea] text-sm font-medium text-[#0077b6] mb-4">
             <BookOpen className="h-4 w-4" />
             Focus Environment
           </div>
-          <h1 className="text-3xl font-bold text-foreground md:text-4xl">
+          <h1 className="text-3xl font-bold font-display text-[#0f2a3f] md:text-4xl">
             Study Room
           </h1>
-          <p className="mt-2 text-muted-foreground max-w-lg mx-auto">
+          <p className="mt-2 text-[#284660] max-w-lg mx-auto">
             Create your perfect study environment with focus timer, ambient
             sounds, and distraction controls.
           </p>

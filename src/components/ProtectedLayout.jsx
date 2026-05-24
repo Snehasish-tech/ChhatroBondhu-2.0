@@ -34,9 +34,9 @@ const ProtectedLayout = ({ children }) => {
 
   return (
     <SidebarProvider defaultOpen={true}>
-      <div className="flex w-full h-screen">
+      <div className="flex w-full h-screen bg-gradient-to-br from-[#f9fdff] to-[#eef5fa]">
         {/* Sidebar */}
-        <Sidebar className="w-64 flex-shrink-0 border-r">
+        <Sidebar className="w-64 flex-shrink-0 border-r border-[#d4e8f7] bg-white shadow-lg">
           <SidebarNavigation />
         </Sidebar>
 

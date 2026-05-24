@@ -16,7 +16,7 @@
 </p>
 
 <div align="center">
-  <img width="1000" alt="ChhatroBondhu Hero Preview" src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=2000&auto=format&fit=crop" />
+  <img width="1000" alt="ChhatroBondhu Hero Preview" src="" />
 </div>
 
 <br/>

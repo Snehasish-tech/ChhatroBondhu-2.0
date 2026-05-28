@@ -1,4 +1,4 @@
-import { ArrowRight, Star, CheckCircle2 } from "lucide-react";
+﻿import { ArrowRight, Star, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const CTASection = () => {
@@ -24,7 +24,7 @@ const CTASection = () => {
           </h2>
           <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
             Join over 100,000+ students who are already learning smarter with
-            ChhatroBondhu.
+            Unilife.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 mb-10">
@@ -45,7 +45,7 @@ const CTASection = () => {
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent border-2 border-white text-white rounded-full font-bold text-lg hover:bg-white/10 hover:scale-105 transition-all"
               onClick={() =>
                 (window.location.href =
-                  "mailto:contact@chhatrobondhu.com?subject=Sales Inquiry")
+                  "mailto:contact@unilife.com?subject=Sales Inquiry")
               }
             >
               Contact Sales

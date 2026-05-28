@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -147,7 +147,7 @@ export default function Auth() {
               <BookOpen className="w-7 h-7 text-white" />
             </div>
             <div>
-              <h1 className="text-2xl font-bold bg-gradient-to-r from-white to-[#b8e7ff] bg-clip-text text-transparent font-display">ChhatroBondhu</h1>
+              <h1 className="text-2xl font-bold bg-gradient-to-r from-white to-[#b8e7ff] bg-clip-text text-transparent font-display">Unilife</h1>
               <p className="text-xs text-[#79ceff] font-medium">AI Learning Companion</p>
             </div>
           </div>
@@ -203,7 +203,7 @@ export default function Auth() {
             <p className="text-xs text-[#79ceff] font-medium">Smart Features</p>
           </div>
           <div className="space-y-1">
-            <p className="text-4xl font-bold font-display bg-gradient-to-br from-white to-[#b8e7ff] bg-clip-text text-transparent">4.9★</p>
+            <p className="text-4xl font-bold font-display bg-gradient-to-br from-white to-[#b8e7ff] bg-clip-text text-transparent">4.9â˜…</p>
             <p className="text-xs text-[#79ceff] font-medium">Rating</p>
           </div>
         </div>
@@ -218,7 +218,7 @@ export default function Auth() {
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#0077b6] to-[#00a6fb] flex items-center justify-center">
                 <BookOpen className="w-5 h-5 text-white" />
               </div>
-              <h1 className="text-xl font-bold font-display text-[#0f2a3f]">ChhatroBondhu</h1>
+              <h1 className="text-xl font-bold font-display text-[#0f2a3f]">Unilife</h1>
             </div>
             <p className="text-sm text-[#284660]">AI Learning Companion</p>
           </div>

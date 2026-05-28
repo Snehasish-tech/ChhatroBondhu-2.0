@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 import {
   ArrowRight,
   Play,
@@ -58,7 +58,7 @@ const HeroSection = () => {
                 Your AI Study <span>Companion</span>
               </h1>
               <p className="landing-hero-subtitle">
-                ChhatroBondhu combines AI, gamification, and collaboration to
+                Unilife combines AI, gamification, and collaboration to
                 transform how you study. Learn smarter, not harder.
               </p>
               <ul className="landing-hero-list">

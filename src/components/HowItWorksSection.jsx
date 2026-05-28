@@ -1,4 +1,4 @@
-import { UserPlus, Target, Award } from "lucide-react";
+﻿import { UserPlus, Target, Award } from "lucide-react";
 
 const HowItWorksSection = () => {
   const steps = [
@@ -25,7 +25,7 @@ const HowItWorksSection = () => {
         <div className="text-center mb-16 landing-reveal">
           <span className="text-[#0077b6] font-semibold tracking-wider uppercase text-sm">Process</span>
           <h2 className="text-3xl md:text-4xl font-bold font-display text-[#0f2a3f] mt-2 mb-4">How It Works</h2>
-          <p className="text-[#284660] max-w-2xl mx-auto">Get started with ChhatroBondhu in three simple steps.</p>
+          <p className="text-[#284660] max-w-2xl mx-auto">Get started with Unilife in three simple steps.</p>
         </div>
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {steps.map((step, index) => (

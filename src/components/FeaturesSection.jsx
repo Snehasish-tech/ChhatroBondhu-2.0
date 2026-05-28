@@ -1,20 +1,10 @@
 import FeatureCard from "./FeatureCard";
 import {
-  Brain,
+  Home,
   Timer,
-  Mic,
   Users,
   Calendar,
-  Heart,
-  PenTool,
-  Youtube,
-  FileSearch,
   Bell,
-  Music,
-  Box,
-  Trophy,
-  BookOpen,
-  Sparkles,
   Calculator,
   Share2,
 } from "lucide-react";
@@ -22,67 +12,39 @@ import {
 const FeaturesSection = () => {
   const baseFeatures = [
     {
-      icon: Brain,
-      title: "AI Study Assistant",
+      icon: Home,
+      title: "Dashboard",
       description:
-        "Get instant answers, explanations, and personalized study recommendations powered by advanced AI.",
-      path: "/ai-assistant",
-    },
-    {
-      icon: Timer,
-      title: "Smart Focus Mode",
-      description:
-        "Stay concentrated with Pomodoro timers, distraction blocking, and ambient sounds for deep work.",
-      path: "/focus-mode",
-    },
-    {
-      icon: Mic,
-      title: "Voice Notes & Audio",
-      description:
-        "Record lectures, convert speech to text, and create audio summaries of your study materials.",
-      path: "/voice-notes",
+        "Your command center for progress tracking, goals, streaks, and personalized study insights.",
+      path: "/dashboard",
     },
     {
       icon: Users,
-      title: "Collaborative Study Room",
+      title: "Study Room",
       description:
-        "Study together virtually with video chat, shared whiteboards, and real-time collaboration tools.",
+        "Study together virtually with shared tools, collaboration features, and a focused workspace.",
+      path: "/study-room",
+    },
+    {
+      icon: Timer,
+      title: "Focus Mode",
+      description:
+        "Block distractions and stay deeply focused with a distraction-free study environment.",
+      path: "/focus-mode",
+    },
+    {
+      icon: Timer,
+      title: "Pomodoro Timer",
+      description:
+        "Use timed work sessions and breaks to maintain momentum and prevent burnout.",
       path: "/study-room",
     },
     {
       icon: Calendar,
-      title: "Smart Schedule Optimizer",
+      title: "Smart Schedule",
       description:
-        "AI-powered scheduling that adapts to your learning style and optimizes study sessions.",
+        "Plan your week intelligently with a schedule that adapts to your priorities.",
       path: "/smart-schedule",
-    },
-    {
-      icon: Heart,
-      title: "Mental Health Tracker",
-      description:
-        "Monitor stress levels, get wellness tips, and maintain a healthy study-life balance.",
-      path: "/mental-health",
-    },
-    {
-      icon: PenTool,
-      title: "Handwriting to Digital",
-      description:
-        "Convert handwritten notes to digital text with AI recognition and smart formatting.",
-      path: "/handwriting-to-digital",
-    },
-    {
-      icon: Youtube,
-      title: "YouTube Study Integration",
-      description:
-        "Extract key points from educational videos, create notes, and track learning progress.",
-      path: "/youtube-study",
-    },
-    {
-      icon: FileSearch,
-      title: "Exam Pattern Analyzer",
-      description:
-        "Analyze past papers, identify important topics, and predict likely exam questions.",
-      path: "/exam-analyzer",
     },
     {
       icon: Bell,
@@ -90,41 +52,6 @@ const FeaturesSection = () => {
       description:
         "Context-aware notifications that remind you to study at optimal times.",
       path: "/smart-reminders",
-    },
-    {
-      icon: Music,
-      title: "Study Spotify Integration",
-      description:
-        "Curated study playlists that adapt to your focus level and study subject.",
-      path: "/study-spotify",
-    },
-    {
-      icon: Box,
-      title: "3D Interactive Visualizations",
-      description:
-        "Explore complex concepts through interactive 3D models and animations.",
-      path: "/3d-visualizations",
-    },
-    {
-      icon: Trophy,
-      title: "Challenge Mode",
-      description:
-        "Compete with friends, earn achievements, and level up your learning journey.",
-      path: "/challenge-mode",
-    },
-    {
-      icon: BookOpen,
-      title: "Smart Flashcards",
-      description:
-        "AI-generated flashcards with spaced repetition for optimal memory retention.",
-      path: "/smart-flashcards",
-    },
-    {
-      icon: Sparkles,
-      title: "AI Quiz Generator",
-      description:
-        "Generate custom quizzes from your notes and study materials instantly.",
-      path: "/ai-quiz-generator",
     },
     {
       icon: Calculator,
@@ -140,6 +67,19 @@ const FeaturesSection = () => {
         "Create, organize, and share your study notes with classmates and friends.",
       path: "/notes-sharing",
     },
+
+    // Hidden for now (kept for easy restore):
+    // { icon: Brain, title: "AI Study Assistant", path: "/ai-assistant" },
+    // { icon: Mic, title: "Voice Notes & Audio", path: "/voice-notes" },
+    // { icon: Heart, title: "Mental Health Tracker", path: "/mental-health" },
+    // { icon: PenTool, title: "Handwriting to Digital", path: "/handwriting-to-digital" },
+    // { icon: Youtube, title: "YouTube Study Integration", path: "/youtube-study" },
+    // { icon: FileSearch, title: "Exam Pattern Analyzer", path: "/exam-analyzer" },
+    // { icon: Music, title: "Study Spotify Integration", path: "/study-spotify" },
+    // { icon: Box, title: "3D Interactive Visualizations", path: "/3d-visualizations" },
+    // { icon: Trophy, title: "Challenge Mode", path: "/challenge-mode" },
+    // { icon: BookOpen, title: "Smart Flashcards", path: "/smart-flashcards" },
+    // { icon: Sparkles, title: "AI Quiz Generator", path: "/ai-quiz-generator" },
   ];
 
   // Dynamic cycling of deep-blue to light-blue colors
@@ -158,7 +98,7 @@ const FeaturesSection = () => {
     <section id="features" className="landing-section">
       <div className="landing-frame">
         <div className="landing-section-head landing-reveal">
-          <span className="landing-tag">17+ Features</span>
+          <span className="landing-tag">8 Features</span>
           <h2 className="font-display">
             Everything You Need to <span className="text-[#0077b6]">Excel</span>
           </h2>

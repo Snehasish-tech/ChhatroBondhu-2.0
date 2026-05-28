@@ -49,8 +49,8 @@ const Header = () => {
             <BookOpen className="h-5 w-5" />
           </span>
           <span className="text-lg font-bold tracking-tight">
-            <span className="text-[#0f2a3f]">Chhatro</span>
-            <span className="text-[#0077b6]">Bondhu</span>
+            <span className="text-[#0f2a3f]">Uni</span>
+            <span className="text-[#0077b6]">life</span>
           </span>
         </Link>
 

@@ -1,4 +1,4 @@
-# 🤝 Contributing to ChhatroBondhu-2.0
+﻿# 🤝 Contributing to ChhatroBondhu-2.0
 
 Thank you for your interest in contributing!
 
@@ -15,8 +15,8 @@ Click on the **Fork** button at the top-right of this GitHub repo.
 
 ### 2️⃣ Clone Your Fork
 ```bash
-git clone https://github.com/Snehasish-tech/ChhatroBondhu-2.0
-cd ChhatroBondhu-2.0
+git clone https://github.com/Snehasish-tech/Unilife-2.0
+cd Unilife-2.0
 ```
 
 ### 3️⃣ Create a Feature Branch

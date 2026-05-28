@@ -1,4 +1,4 @@
-import { Star } from "lucide-react";
+﻿import { Star } from "lucide-react";
 
 const TestimonialsSection = () => {
   const testimonials = [
@@ -11,7 +11,7 @@ const TestimonialsSection = () => {
     {
       name: "Priya S.",
       role: "Medical Student",
-      content: "I use the Focus Mode and Smart Flashcards daily. My retention has improved drastically since I started using ChhatroBondhu.",
+      content: "I use the Focus Mode and Smart Flashcards daily. My retention has improved drastically since I started using Unilife.",
       rating: 5
     },
     {

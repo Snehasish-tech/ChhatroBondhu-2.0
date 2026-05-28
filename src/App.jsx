@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "@/contexts/AuthContext";
+import { featureFlags } from "@/lib/featureFlags";
 import ScrollToTop from "@/components/ScrollToTop";
 import ProtectedLayout from "@/components/ProtectedLayout";
 import Index from "./pages/Index";
@@ -45,150 +46,187 @@ const App = () => (
             <Route path="/auth" element={<Auth />} />
 
             {/* Protected Routes with Sidebar */}
-            <Route
-              path="/dashboard"
-              element={
-                <ProtectedLayout>
-                  <Dashboard />
-                </ProtectedLayout>
-              }
-            />
-            <Route
-              path="/study-room"
-              element={
-                <ProtectedLayout>
-                  <StudyRoom />
-                </ProtectedLayout>
-              }
-            />
-            <Route
-              path="/ai-assistant"
-              element={
-                <ProtectedLayout>
-                  <AIAssistant />
-                </ProtectedLayout>
-              }
-            />
-            <Route
-              path="/focus-mode"
-              element={
-                <ProtectedLayout>
-                  <FocusMode />
-                </ProtectedLayout>
-              }
-            />
-            <Route
-              path="/mental-health"
-              element={
-                <ProtectedLayout>
-                  <MentalHealth />
-                </ProtectedLayout>
-              }
-            />
-            <Route
-              path="/voice-notes"
-              element={
-                <ProtectedLayout>
-                  <VoiceNotes />
-                </ProtectedLayout>
-              }
-            />
-            <Route
-              path="/smart-schedule"
-              element={
-                <ProtectedLayout>
-                  <SmartSchedule />
-                </ProtectedLayout>
-              }
-            />
-            <Route
-              path="/handwriting-to-digital"
-              element={
-                <ProtectedLayout>
-                  <HandwritingToDigital />
-                </ProtectedLayout>
-              }
-            />
-            <Route
-              path="/youtube-study"
-              element={
-                <ProtectedLayout>
-                  <YouTubeStudy />
-                </ProtectedLayout>
-              }
-            />
-            <Route
-              path="/exam-analyzer"
-              element={
-                <ProtectedLayout>
-                  <ExamAnalyzer />
-                </ProtectedLayout>
-              }
-            />
-            <Route
-              path="/smart-reminders"
-              element={
-                <ProtectedLayout>
-                  <SmartReminders />
-                </ProtectedLayout>
-              }
-            />
-            <Route
-              path="/study-spotify"
-              element={
-                <ProtectedLayout>
-                  <StudySpotify />
-                </ProtectedLayout>
-              }
-            />
-            <Route
-              path="/3d-visualizations"
-              element={
-                <ProtectedLayout>
-                  <ThreeDVisualizations />
-                </ProtectedLayout>
-              }
-            />
-            <Route
-              path="/challenge-mode"
-              element={
-                <ProtectedLayout>
-                  <ChallengeMode />
-                </ProtectedLayout>
-              }
-            />
-            <Route
-              path="/smart-flashcards"
-              element={
-                <ProtectedLayout>
-                  <SmartFlashcards />
-                </ProtectedLayout>
-              }
-            />
-            <Route
-              path="/ai-quiz-generator"
-              element={
-                <ProtectedLayout>
-                  <AIQuizGenerator />
-                </ProtectedLayout>
-              }
-            />
-            <Route
-              path="/cgpa-calculator"
-              element={
-                <ProtectedLayout>
-                  <CGPACalculator />
-                </ProtectedLayout>
-              }
-            />
-            <Route
-              path="/notes-sharing"
-              element={
-                <ProtectedLayout>
-                  <NotesSharing />
-                </ProtectedLayout>
-              }
-            />
+            {featureFlags.dashboard && (
+              <Route
+                path="/dashboard"
+                element={
+                  <ProtectedLayout>
+                    <Dashboard />
+                  </ProtectedLayout>
+                }
+              />
+            )}
+            {featureFlags.studyRoom && (
+              <Route
+                path="/study-room"
+                element={
+                  <ProtectedLayout>
+                    <StudyRoom />
+                  </ProtectedLayout>
+                }
+              />
+            )}
+            {featureFlags.aiAssistant && (
+              <Route
+                path="/ai-assistant"
+                element={
+                  <ProtectedLayout>
+                    <AIAssistant />
+                  </ProtectedLayout>
+                }
+              />
+            )}
+            {/* Focus Mode is part of the Study Room feature */}
+            {featureFlags.studyRoom && (
+              <Route
+                path="/focus-mode"
+                element={
+                  <ProtectedLayout>
+                    <FocusMode />
+                  </ProtectedLayout>
+                }
+              />
+            )}
+            {featureFlags.mentalHealthTracker && (
+              <Route
+                path="/mental-health"
+                element={
+                  <ProtectedLayout>
+                    <MentalHealth />
+                  </ProtectedLayout>
+                }
+              />
+            )}
+            {featureFlags.voiceNotes && (
+              <Route
+                path="/voice-notes"
+                element={
+                  <ProtectedLayout>
+                    <VoiceNotes />
+                  </ProtectedLayout>
+                }
+              />
+            )}
+            {featureFlags.smartSchedule && (
+              <Route
+                path="/smart-schedule"
+                element={
+                  <ProtectedLayout>
+                    <SmartSchedule />
+                  </ProtectedLayout>
+                }
+              />
+            )}
+            {featureFlags.handwritingToDigital && (
+              <Route
+                path="/handwriting-to-digital"
+                element={
+                  <ProtectedLayout>
+                    <HandwritingToDigital />
+                  </ProtectedLayout>
+                }
+              />
+            )}
+            {featureFlags.youtubeAnalyzer && (
+              <Route
+                path="/youtube-study"
+                element={
+                  <ProtectedLayout>
+                    <YouTubeStudy />
+                  </ProtectedLayout>
+                }
+              />
+            )}
+            {featureFlags.examAnalyzer && (
+              <Route
+                path="/exam-analyzer"
+                element={
+                  <ProtectedLayout>
+                    <ExamAnalyzer />
+                  </ProtectedLayout>
+                }
+              />
+            )}
+            {featureFlags.smartReminders && (
+              <Route
+                path="/smart-reminders"
+                element={
+                  <ProtectedLayout>
+                    <SmartReminders />
+                  </ProtectedLayout>
+                }
+              />
+            )}
+            {featureFlags.studySpotify && (
+              <Route
+                path="/study-spotify"
+                element={
+                  <ProtectedLayout>
+                    <StudySpotify />
+                  </ProtectedLayout>
+                }
+              />
+            )}
+            {featureFlags.threeDVisualizations && (
+              <Route
+                path="/3d-visualizations"
+                element={
+                  <ProtectedLayout>
+                    <ThreeDVisualizations />
+                  </ProtectedLayout>
+                }
+              />
+            )}
+            {featureFlags.challengeMode && (
+              <Route
+                path="/challenge-mode"
+                element={
+                  <ProtectedLayout>
+                    <ChallengeMode />
+                  </ProtectedLayout>
+                }
+              />
+            )}
+            {featureFlags.smartFlashcards && (
+              <Route
+                path="/smart-flashcards"
+                element={
+                  <ProtectedLayout>
+                    <SmartFlashcards />
+                  </ProtectedLayout>
+                }
+              />
+            )}
+            {featureFlags.aiQuizGenerator && (
+              <Route
+                path="/ai-quiz-generator"
+                element={
+                  <ProtectedLayout>
+                    <AIQuizGenerator />
+                  </ProtectedLayout>
+                }
+              />
+            )}
+            {featureFlags.cgpaCalculator && (
+              <Route
+                path="/cgpa-calculator"
+                element={
+                  <ProtectedLayout>
+                    <CGPACalculator />
+                  </ProtectedLayout>
+                }
+              />
+            )}
+            {featureFlags.notesSharing && (
+              <Route
+                path="/notes-sharing"
+                element={
+                  <ProtectedLayout>
+                    <NotesSharing />
+                  </ProtectedLayout>
+                }
+              />
+            )}
 
             {/* 404 Route */}
             <Route path="*" element={<NotFound />} />

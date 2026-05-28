@@ -1,4 +1,4 @@
-import {
+﻿import {
   Accordion,
   AccordionContent,
   AccordionItem,
@@ -10,8 +10,8 @@ import { MessageCircle, Mail, ArrowRight, HelpCircle } from "lucide-react";
 const FAQSection = () => {
   const faqs = [
     {
-      question: "Is ChhatroBondhu free to use?",
-      answer: "Yes! ChhatroBondhu offers a generous free tier with access to core features including AI study assistant, flashcards, and basic focus mode. Premium features are available with our Pro subscription.",
+      question: "Is Unilife free to use?",
+      answer: "Yes! Unilife offers a generous free tier with access to core features including AI study assistant, flashcards, and basic focus mode. Premium features are available with our Pro subscription.",
     },
     {
       question: "How does the AI Study Assistant work?",
@@ -22,7 +22,7 @@ const FAQSection = () => {
       answer: "Absolutely! Our Collaborative Study Room feature allows you to study with friends in real-time. Share screens, use virtual whiteboards, chat, and even compete in quiz challenges together.",
     },
     {
-      question: "Does ChhatroBondhu work offline?",
+      question: "Does Unilife work offline?",
       answer: "Some features like flashcard review and downloaded notes work offline. However, AI-powered features and real-time collaboration require an internet connection.",
     },
     {
@@ -30,8 +30,8 @@ const FAQSection = () => {
       answer: "We take privacy seriously. All your study data is encrypted, and we never share personal information with third parties. You can export or delete your data anytime from your account settings.",
     },
     {
-      question: "What devices can I use ChhatroBondhu on?",
-      answer: "ChhatroBondhu works seamlessly across all devices - desktop, laptop, tablet, and mobile. Your progress syncs automatically, so you can study anywhere, anytime.",
+      question: "What devices can I use Unilife on?",
+      answer: "Unilife works seamlessly across all devices - desktop, laptop, tablet, and mobile. Your progress syncs automatically, so you can study anywhere, anytime.",
     },
   ];
 
@@ -103,7 +103,7 @@ const FAQSection = () => {
                       Email support
                     </h3>
                     <p className="text-sm text-muted-foreground mb-3 leading-relaxed break-all">
-                      support@chhatrobondhu.com
+                      support@unilife.com
                     </p>
                     <Button variant="outline" size="sm" className="group">
                       Send Email

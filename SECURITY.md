@@ -1,4 +1,4 @@
-# 🔒 Security Policy
+﻿# ðŸ”’ Security Policy
 
 ## Supported Versions
 
@@ -6,24 +6,24 @@ We release patches for security vulnerabilities. Which versions are eligible for
 
 | Version | Supported          |
 | ------- | ------------------ |
-| Latest  | ✅ Yes             |
-| < Latest| ❌ No              |
+| Latest  | âœ… Yes             |
+| < Latest| âŒ No              |
 
 We recommend always using the latest version of React-CB-JS to ensure you have all security updates.
 
 ---
 
-## 🚨 Reporting a Vulnerability
+## ðŸš¨ Reporting a Vulnerability
 
 **Please DO NOT report security vulnerabilities through public GitHub issues.**
 
 If you discover a security vulnerability, please follow these steps:
 
-### 1️⃣ **Report Privately**
+### 1ï¸âƒ£ **Report Privately**
 - **Email:** Send details to the project maintainers (check repository for contact info)
 - **GitHub Security Advisory:** Use GitHub's [private vulnerability reporting feature](https://github.com/YOUR_USERNAME/React-CB-JS/security/advisories/new)
 
-### 2️⃣ **What to Include in Your Report**
+### 2ï¸âƒ£ **What to Include in Your Report**
 Please provide the following information:
 
 - **Type of vulnerability** (e.g., XSS, SQL injection, authentication bypass)
@@ -35,7 +35,7 @@ Please provide the following information:
 - **Suggested fix** (if you have one)
 - **Your contact information**
 
-### 3️⃣ **What to Expect**
+### 3ï¸âƒ£ **What to Expect**
 
 | Timeline | Action |
 |----------|--------|
@@ -47,48 +47,48 @@ We'll keep you informed throughout the process and give you credit for the disco
 
 ---
 
-## 🛡️ Security Best Practices for Contributors
+## ðŸ›¡ï¸ Security Best Practices for Contributors
 
 ### For Code Contributors:
 
-#### ✅ **Authentication & Authorization**
+#### âœ… **Authentication & Authorization**
 - Never commit sensitive credentials (API keys, passwords, tokens)
 - Use environment variables for all secrets
 - Implement proper authentication checks in protected routes
 - Validate user permissions on both client and server side
 
-#### ✅ **Input Validation**
+#### âœ… **Input Validation**
 - Sanitize all user inputs before processing
 - Validate data types and formats
 - Use parameterized queries to prevent injection attacks
 - Implement rate limiting for API endpoints
 
-#### ✅ **Dependencies**
+#### âœ… **Dependencies**
 - Regularly update dependencies: `npm audit fix`
 - Review dependencies before adding them
 - Avoid packages with known vulnerabilities
 - Use `npm audit` before submitting PRs
 
-#### ✅ **Data Protection**
+#### âœ… **Data Protection**
 - Never log sensitive information (passwords, tokens, PII)
 - Implement proper error handling without exposing system details
 - Use HTTPS for all external communications
 - Encrypt sensitive data at rest and in transit
 
-#### ✅ **XSS Prevention**
+#### âœ… **XSS Prevention**
 - React automatically escapes JSX content, but be cautious with:
   - `dangerouslySetInnerHTML` - avoid unless absolutely necessary
   - Direct DOM manipulation
   - Third-party libraries that render user content
 - Sanitize HTML content from external sources
 
-#### ✅ **Supabase Security**
+#### âœ… **Supabase Security**
 - Use Row Level Security (RLS) policies
 - Never expose service role keys in client code
 - Validate all database operations
 - Implement proper access control
 
-#### ✅ **API Security**
+#### âœ… **API Security**
 - Implement proper CORS policies
 - Use authentication tokens securely
 - Validate all API responses
@@ -96,48 +96,48 @@ We'll keep you informed throughout the process and give you credit for the disco
 
 ---
 
-## ⚠️ Common Vulnerabilities to Avoid
+## âš ï¸ Common Vulnerabilities to Avoid
 
 ### 1. **Exposed Secrets**
-❌ **Never do this:**
+âŒ **Never do this:**
 ```javascript
 const API_KEY = "sk-1234567890abcdef"; // Hardcoded secret
 ```
 
-✅ **Always do this:**
+âœ… **Always do this:**
 ```javascript
 const API_KEY = import.meta.env.VITE_API_KEY; // Environment variable
 ```
 
 ### 2. **Unsafe HTML Rendering**
-❌ **Avoid:**
+âŒ **Avoid:**
 ```jsx
 <div dangerouslySetInnerHTML={{__html: userInput}} />
 ```
 
-✅ **Prefer:**
+âœ… **Prefer:**
 ```jsx
 <div>{userInput}</div> // React escapes automatically
 ```
 
 ### 3. **Insecure Data Storage**
-❌ **Avoid:**
+âŒ **Avoid:**
 ```javascript
 localStorage.setItem('token', jwtToken); // XSS vulnerable
 ```
 
-✅ **Prefer:**
+âœ… **Prefer:**
 ```javascript
 // Use httpOnly cookies or secure storage methods
 ```
 
 ### 4. **Missing Input Validation**
-❌ **Avoid:**
+âŒ **Avoid:**
 ```javascript
 const userId = req.params.id; // Direct use without validation
 ```
 
-✅ **Prefer:**
+âœ… **Prefer:**
 ```javascript
 const userId = Number(req.params.id);
 if (!userId || userId < 1) throw new Error('Invalid ID');
@@ -145,7 +145,7 @@ if (!userId || userId < 1) throw new Error('Invalid ID');
 
 ---
 
-## 🔍 Security Checklist for Pull Requests
+## ðŸ” Security Checklist for Pull Requests
 
 Before submitting a PR, ensure:
 
@@ -162,7 +162,7 @@ Before submitting a PR, ensure:
 
 ---
 
-## 🔐 Environment Variables Security
+## ðŸ” Environment Variables Security
 
 ### Required Setup:
 1. **Never commit `.env` files** to version control
@@ -179,7 +179,7 @@ VITE_SUPABASE_ANON_KEY=your_anon_key_here
 
 ---
 
-## 🚫 Out of Scope
+## ðŸš« Out of Scope
 
 The following issues are typically **NOT** considered security vulnerabilities:
 
@@ -194,7 +194,7 @@ The following issues are typically **NOT** considered security vulnerabilities:
 
 ---
 
-## 📜 Disclosure Policy
+## ðŸ“œ Disclosure Policy
 
 - We follow **responsible disclosure** principles
 - Security vulnerabilities will be patched before public disclosure
@@ -204,7 +204,7 @@ The following issues are typically **NOT** considered security vulnerabilities:
 
 ---
 
-## 🏆 Hall of Fame
+## ðŸ† Hall of Fame
 
 We appreciate security researchers who help keep React-CB-JS safe!
 
@@ -217,7 +217,7 @@ Contributors who report valid security issues will be listed here (with permissi
 
 ---
 
-## 📚 Additional Resources
+## ðŸ“š Additional Resources
 
 - [OWASP Top 10](https://owasp.org/www-project-top-ten/)
 - [React Security Best Practices](https://react.dev/learn/security)
@@ -226,7 +226,7 @@ Contributors who report valid security issues will be listed here (with permissi
 
 ---
 
-## 📞 Contact
+## ðŸ“ž Contact
 
 For security-related questions or concerns:
 - Review this security policy first
@@ -234,4 +234,5 @@ For security-related questions or concerns:
 - Contact maintainers through private channels
 - Use GitHub Security Advisory for vulnerabilities
 
-**Thank you for helping keep ChhatroBondhu-2.0 secure! 🔒**
+**Thank you for helping keep Unilife-2.0 secure! ðŸ”’**
+

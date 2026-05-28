@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react";
+﻿import { createContext, useContext, useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 
@@ -104,7 +104,7 @@ export function AuthProvider({ children }) {
       }
 
       toast({
-        title: "Welcome to ChhatroBondhu!",
+        title: "Welcome to Unilife!",
         description: "Your account has been created successfully.",
       });
 
@@ -210,3 +210,4 @@ export function useAuth() {
 
   return context;
 }
+

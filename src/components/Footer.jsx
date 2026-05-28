@@ -1,4 +1,4 @@
-import { BookOpen, Twitter, Linkedin, Github, Youtube, Mail } from "lucide-react";
+﻿import { BookOpen, Twitter, Linkedin, Github, Youtube, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -32,7 +32,7 @@ const Footer = () => {
                 <BookOpen className="h-5 w-5" />
               </div>
               <span className="text-2xl font-bold tracking-tight font-display text-white">
-                Chhatro<span className="text-[#00a6fb]">Bondhu</span>
+                Uni<span className="text-[#00a6fb]">life</span>
               </span>
             </Link>
             <p className="text-sm text-[#88a4b8] max-w-sm mb-8 leading-relaxed">
@@ -68,7 +68,7 @@ const Footer = () => {
 
         <div className="mt-12 pt-8 border-t border-[#1e3c5a] flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-sm text-[#88a4b8]">
-            © {new Date().getFullYear()} ChhatroBondhu. All rights reserved.
+            © {new Date().getFullYear()} Unilife. All rights reserved.
           </p>
           
           <div className="flex items-center gap-4">

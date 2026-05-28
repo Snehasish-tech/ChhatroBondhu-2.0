@@ -1,244 +1,340 @@
-﻿<div align="center">
-<a href="https://github.com/Snehasish-tech/Unilife-2.0">
-  
-  <img src="https://readme-typing-svg.demolab.com?font=Space+Grotesk&weight=700&size=35&duration=2500&pause=800&color=0077B6&center=true&vCenter=true&width=1000&height=100&lines=Welcome+to+Unilife+2.0;Your+AI-Powered+Study+Companion;Learn+Smarter,+Not+Harder;15%2B+Smart+Learning+Features;Your+Partner+in+Academic+Excellence." alt="Unilife Professional" />
-</a>
-</div>
-<h3 align="center"><i>"Transforming your study experience with our comprehensive suite of AI-powered tools designed for academic excellence."</i></h3>
-
-<p align="center">
-  <a href="https://groq.com/"><img src="https://img.shields.io/badge/Groq-Fast_LLM-F55036?style=for-the-badge" alt="Groq"></a>
-  <a href="https://tailwindcss.com"><img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css" alt="Tailwind"></a>
-</p>
-
 <div align="center">
-  <img width="1000" alt="ChhatroBondhu Hero Preview" src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=2000&auto=format&fit=crop" />
-</div>
 
 <br/>
 
-# ðŸŽ¯ The Problem
-
-**Students today are overwhelmed with distractions, information overload, and a lack of personalized guidance.**
-
-```mermaid
-flowchart TB
-    A[ðŸ“š Modern Student]
-    B[ðŸ¤¯ Information Overload]
-    C[ðŸ“‰ Lack of Focus & Distractions]
-    D[ðŸš« Cookie-Cutter Learning]
-    E[ðŸ˜Ÿ Exam Anxiety]
-    F[ðŸ¥± Burnout & Mental Fatigue]
-
-    A --> B
-    A --> C
-    A --> D
-    A --> E
-    A --> F
-
-    B --> B1[â³ Wasting hours finding what to study]
-    C --> C1[ðŸ“± Social media & phone addiction]
-    D --> D1[ðŸš« One-size-fits-all education failing]
-    E --> E1[ðŸ“‰ Poor exam performance]
-    F --> F1[â˜ ï¸ Dropping out or losing motivation]
-
-    B1 --> X[âŒ Decreased Academic Potential]
-    C1 --> X
-    F1 --> X
+```
+██╗   ██╗███╗   ██╗██╗██╗     ██╗███████╗███████╗
+██║   ██║████╗  ██║██║██║     ██║██╔════╝██╔════╝
+██║   ██║██╔██╗ ██║██║██║     ██║█████╗  █████╗  
+██║   ██║██║╚██╗██║██║██║     ██║██╔══╝  ██╔══╝  
+╚██████╔╝██║ ╚████║██║███████╗██║██║     ███████╗
+ ╚═════╝ ╚═╝  ╚═══╝╚═╝╚══════╝╚═╝╚═╝     ╚══════╝
 ```
 
-## ðŸ’¡ Our Solution
+### 🎓 *"Everything a Student Needs, In One Place."*
 
-**Unilife 2.0** is an all-in-one AI-powered study ecosystem â€” transforming chaos into hyper-focused, personalized, and gamified learning experiences. 
+<br/>
 
-> *"Learn smarter, not harder. With the right AI companion, every student has the potential to become a top performer."*
+[![Platform](https://img.shields.io/badge/Platform-Android%20%7C%20iOS%20%7C%20Web-4A90D9?style=for-the-badge)](/)
+[![Status](https://img.shields.io/badge/Status-Active%20Development-brightgreen?style=for-the-badge)](/)
+[![Made For](https://img.shields.io/badge/Made%20For-Students%20🎓-blueviolet?style=for-the-badge)](/)
+[![License](https://img.shields.io/badge/License-MIT-orange?style=for-the-badge)](LICENSE)
 
-### ðŸŽ¬ How It Works
+<br/>
 
-```mermaid
-flowchart LR
-    A[ðŸ‘¤ 1. Setup Profile<br/>& Academic Goals] --> B[ðŸ¤– 2. AI Mentorship<br/>Groq & Gemini Assist]
-    B --> C[ðŸŽ¯ 3. Deep Focus<br/>Study Room & Timers]
-    C --> D[ðŸ† 4. Excel & Grow<br/>Analytics & Rewards]
-```
+> **UniLife** is a comprehensive student productivity ecosystem built to simplify every aspect of university life —  
+> from tracking attendance and deadlines to managing finances and calculating your CGPA.  
+> One app. Zero chaos.
 
-# ï¸ System Architecture
+<br/>
 
-### High-Level Overview
-
-```mermaid
-flowchart TB
-    subgraph Client["ðŸ–¥ï¸ Client Layer (React 18)"]
-        UI["Tailwind CSS + shadcn/ui"]
-        Dashboard["Student Progress Dashboard"]
-        StudyRoom["Pomodoro & Focus Mode"]
-        Tools["Flashcards, Quizzes & CGPA"]
-    end
-
-    subgraph API["âš¡ Backend Layer"]
-        Auth["/auth â€” Supabase Authentication"]
-        Context["React Context Providers"]
-    end
-
-    subgraph Services["ðŸ¤– AI & Integrations"]
-        Groq["âš¡ Groq (LLaMA-3)"]
-        Gemini["ðŸ§  Google Gemini 1.5 Flash"]
-        OpenAI["ðŸ’¬ OpenAI GPT (Optional)"]
-        Spotify["ðŸŽµ Study Spotify Integration"]
-        YouTube["ðŸ“º YT Video Analyzer"]
-    end
-
-    subgraph Database["ðŸ˜ Supabase"]
-        Users[("Users Profile")]
-        Notes[("Notes Hub")]
-        Stats[("Study Statistics")]
-    end
-
-    UI --> Auth
-    Auth --> Database
-    Client --> Services
-    Groq --> Tools
-    Gemini --> Tools
-    Services --> Dashboard
-```
-
-# ðŸ” Learning Intelligence Dashboard
-
-The **Unilife Dashboard** acts as your central command center, interrogating your study habits in real-time to recommend actions, track streaks, and maintain mental wellness.
-
-## ðŸ“Š Academic Analytics
-
-### ðŸŽ¯ Student Focus Distribution
-
-```mermaid
-pie title "Weekly Study Habit Distribution"
-    "Deep Work (Focus Mode)" : 45
-    "Active Recall (Flashcards)" : 25
-    "Testing (AI Quizzes)" : 20
-    "Video Analysis (YouTube)" : 10
-```
-
-### ðŸŽ­ Learning Intelligence Modes
-
-```mermaid
-graph LR
-    A[ðŸŽ¬ Select Mode] --> B[ðŸ§  AI Assistant]
-    A --> C[ðŸŽ¯ Focus Mode]
-    A --> D[ðŸ§˜ Wellness Tracker]
-
-    B --> E["Instant Explanations<br/>& Problem Solving"]
-    C --> F["Pomodoro Timers<br/>& Distraction Blockers"]
-    D --> G["Mood Logging<br/>& Breathing Exercises"]
-
-    E --> H[ðŸ† Academic Excellence]
-    F --> H
-    G --> H
-```
-
-# ðŸ”§ Tech Stack
-
-<div align="center">
-
-| Category | Technologies |
-|:--------:|:------------:|
-| **Frontend** | ![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black) ![Vite](https://img.shields.io/badge/Vite-5-646CFF?style=for-the-badge&logo=vite&logoColor=white) ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white) |
-| **UI Components** | ![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-Components-000000?style=for-the-badge&logo=shadcnui&logoColor=white) ![Lucide](https://img.shields.io/badge/Lucide-Icons-FF6C37?style=for-the-badge) |
-| **Database & Auth** | ![Supabase](https://img.shields.io/badge/Supabase-PostgreSQL-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white) |
-| **AI Models** | ![Groq](https://img.shields.io/badge/Groq-Llama_3-F55036?style=for-the-badge) ![Gemini](https://img.shields.io/badge/Gemini-1.5_Flash-4285F4?style=for-the-badge&logo=google&logoColor=white) |
-| **Data Visualization** | ![Recharts](https://img.shields.io/badge/Recharts-Analytics-22B5BF?style=for-the-badge) |
-| **Deployment** | ![Vercel](https://img.shields.io/badge/Vercel-Serverless-000000?style=for-the-badge&logo=vercel&logoColor=white) |
+---
 
 </div>
 
-# âœ¨ 17+ Smart Features
+## Table of Contents
 
-<div align="center">
+- [About the Project](#-about-the-project)
+- [Why UniLife?](#-why-unilife)
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [Getting Started](#-getting-started)
+- [Project Structure](#-project-structure)
+- [Screenshots](#-screenshots)
+- [Roadmap](#-roadmap)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Author](#-author)
 
-| Status | Feature | Description |
-|:---:|:---:|:---|
-| âœ… **Active** | ðŸŽ¯ **Study Room** | Pomodoro timers, distraction blocking & ambient sounds. |
-| âœ… **Active** | ðŸ—“ï¸ **Smart Schedule** | AI-powered calendar optimizing your study sessions. |
-| âœ… **Active** | ðŸ¤ **Notes Sharing Hub** | Collaborate and share your study materials with peers. |
-| âœ… **Active** | ðŸ”” **Smart Reminders** | Set intelligent reminders for study sessions and tasks. |
-| âœ… **Active** | ðŸ§® **CGPA Calculator** | Easily calculate and track your Grade Point Average. |
-| ðŸš§ **Hidden** | ðŸ§  **AI Study Assistant** | Instant answers and personalized recommendations (Groq/Gemini). |
-| ðŸš§ **Hidden** | ðŸŽ™ï¸ **Voice Notes & Audio** | Record lectures, convert speech to text, generate summaries. |
-| ðŸš§ **Hidden** | ðŸ“º **YouTube Integration** | Extract key points from educational videos automatically. |
-| ðŸš§ **Hidden** | ðŸ“ **Smart Flashcards** | AI-generated flashcards utilizing spaced repetition. |
-| ðŸš§ **Hidden** | âœï¸ **Handwriting to Digital** | Convert physical handwritten notes to digital text. |
-| ðŸš§ **Hidden** | ðŸ“Š **Exam Pattern Analyzer** | Analyze past papers and predict likely exam questions. |
-| ðŸš§ **Hidden** | ðŸ§˜ **Mental Health Tracker** | Track mood, stress levels, and practice breathing exercises. |
-| ðŸš§ **Hidden** | ðŸ† **Challenge Mode** | Gamified learning: earn XP, rank on leaderboards, keep streaks. |
-| ðŸš§ **Hidden** | ðŸŽ¶ **Study Spotify** | Curated focus playlists that adapt to your study vibe. |
+---
 
-</div>
+##  About the Project
 
-# ðŸš€ Getting Started
+University life is exciting — but also overwhelming. Between managing lectures, assignments, group projects, exams, and finances, students often feel scattered and stressed. Most existing apps solve *one* problem at a time, forcing students to juggle 5–6 different tools.
 
-> Spin up **Unilife 2.0** locally in minutes.
+**UniLife** was built to change that.
 
-## ðŸ§° Requirements
+It's a **Student Daily Life Ecosystem** — a single, unified platform where every tool a student needs lives together. Whether you're a freshman trying to survive your first semester or a final-year student grinding your GPA, UniLife adapts to your academic journey.
 
-- **Node.js** â‰¥ 18 (LTS recommended)
-- **Supabase** account (Free tier)
-- **API Keys:** Groq or Google Gemini
+This project was created with a deep understanding of student pain points, especially within the South Asian university context where attendance requirements, CGPA-based grading, and tight student budgets are real daily concerns.
 
-## ðŸ“¦ Project Setup
+---
+
+##  Why UniLife?
+
+| Problem | UniLife Solution |
+|---|---|
+| "I forgot to submit the assignment!" | Smart assignment reminders with deadline alerts |
+| "Am I going to lose attendance?" | Real-time attendance tracking with shortage warnings |
+| "I spent all my money and don't know where it went." | Visual budget tracker with category-wise breakdowns |
+| "What's my CGPA this semester?" | Instant CGPA calculator with grade simulation |
+| "I can't find the notes from last week's class." | Shared notes hub with classmates |
+| "I keep getting distracted while studying." | Built-in study timer using the Pomodoro technique |
+
+---
+
+##  Features
+
+###  Attendance Tracker
+Never fall below your required attendance percentage again. UniLife lets you:
+- Log attendance for each subject separately
+- Automatically calculate your current attendance percentage
+- Get **early warnings** when you're approaching the minimum threshold
+- View a weekly/monthly attendance calendar
+- See how many classes you can afford to miss — or need to attend to recover
+
+---
+
+###  Assignment Reminder
+Stay on top of every deadline without the anxiety. Features include:
+- Add assignments with subject name, deadline date & time, and priority level
+- Receive **push notifications** before the deadline (24 hrs, 6 hrs, 1 hr)
+- Mark assignments as completed and track your submission history
+- Color-coded urgency indicators (urgent, upcoming, completed)
+- Support for multiple assignment types: homework, projects, presentations, quizzes
+
+---
+
+###  Notes Sharing
+A collaborative academic resource hub for your batch and department:
+- Upload and share notes, PDFs, slides, and handwritten scans
+- Browse notes by subject, semester, or topic
+- Bookmark important notes for quick access
+- Rate and review shared resources to highlight quality material
+- Reduce dependency on scattered WhatsApp groups and Google Drive folders
+
+---
+
+###  Budget Tracking
+Student life on a budget — made manageable:
+- Set a monthly budget and track spending in real time
+- Categorize expenses: food, transport, books, entertainment, etc.
+- Visual charts showing where your money goes each month
+- Get alerts when you're nearing your budget limit
+- View spending history and spot patterns over time
+- Designed specifically for student spending habits
+
+---
+
+###  CGPA Calculator
+Stop guessing your grades — know them:
+- Enter your course credits and grades to instantly compute your CGPA
+- Supports standard **4.0 and 5.0 GPA scales** (configurable)
+- **Simulate future grades** — see what you need to score to hit your target CGPA
+- Semester-wise GPA breakdown and cumulative history
+- Supports both letter grades (A+, A, B+…) and numerical grades
+
+---
+
+###  Study Timer
+Build focus. Beat procrastination. Study smarter:
+- **Pomodoro technique** built-in: 25-minute focus sessions with short breaks
+- Customizable session lengths and break intervals
+- Tracks total study hours per day, week, and month
+- Subject-wise study log — know exactly how much time you've invested
+- Ambient focus sounds (rain, café noise, white noise) to minimize distraction
+- Streak tracking to build consistent study habits
+
+---
+
+##  Tech Stack
+
+> *(Update with your actual stack)*
+
+**Frontend**
+- React Native / Flutter *(cross-platform mobile)*
+- React.js *(web dashboard)*
+- Tailwind CSS / NativeWind
+
+**Backend**
+- Node.js + Express.js
+- REST API architecture
+
+**Database**
+- MongoDB (user data, notes, assignments)
+- Firebase Realtime Database (live sync for shared notes)
+
+**Authentication**
+- Firebase Auth / JWT tokens
+
+**Notifications**
+- Firebase Cloud Messaging (FCM)
+
+**Other Tools**
+- Chart.js / Recharts *(budget & CGPA visualizations)*
+- AsyncStorage / SecureStore *(local persistence)*
+
+---
+
+##  Getting Started
+
+### Prerequisites
+
+Make sure you have the following installed:
 
 ```bash
-git clone https://github.com/Snehasish-tech/Unilife-2.0.git
-cd Unilife-2.0
+node >= 18.x
+npm >= 9.x
+git
+```
+
+### Installation
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/your-username/unilife.git
+
+# 2. Navigate into the project directory
+cd unilife
+
+# 3. Install dependencies
 npm install
-```
 
-### ðŸ” Environment Configuration
+# 4. Set up environment variables
+cp .env.example .env
+# → Fill in your Firebase config, MongoDB URI, JWT secret, etc.
 
-Create a `.env` file in the root directory:
-
-```bash
-# Supabase Configuration
-VITE_SUPABASE_URL=your_supabase_url
-VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
-
-# AI API Configuration
-VITE_GROQ_API_KEY=your_groq_api_key_here
-VITE_AI_PROVIDER=groq
-```
-
-### â–¶ï¸ Run the App
-
-```bash
+# 5. Start the development server
 npm run dev
 ```
-The app will be running at `http://localhost:5173`
 
-# ðŸ—ºï¸ Roadmap
+### Environment Variables
 
-| Status | Feature | Impact |
-|:------:|:-------:|:------:|
-| âœ… | AI Chat Assistant (Groq/Gemini) | Instant academic problem solving |
-| âœ… | Focus Mode & Distraction Blocker | +40% increase in deep work |
-| âœ… | AI Flashcards & Quizzes | Better memory retention |
-| âœ… | Dashboard & Analytics | Clear visibility of progress |
-| âœ… | YouTube Video Analyzer | Save hours of video watching |
-| ðŸ”„ | 3D Interactive Visualizations | Immersive complex concept learning |
-| ðŸ”„ | 1-on-1 Mentorship matching | Connect students with experts |
-| ðŸ”„ | Mobile App / PWA | On-the-go study capabilities |
+Create a `.env` file in the root directory with the following:
 
-# ðŸ¤ Contributing
+```env
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret_key
+FIREBASE_API_KEY=your_firebase_api_key
+FIREBASE_PROJECT_ID=your_firebase_project_id
+FCM_SERVER_KEY=your_fcm_server_key
+```
 
-We welcome contributions! Please see our CONTRIBUTING.md for details on how to get started, project setup, and coding guidelines.
+---
+
+## 📁 Project Structure
+
+```
+unilife/
+├── client/                  # Frontend (React / React Native)
+│   ├── components/          # Reusable UI components
+│   ├── screens/             # App screens
+│   │   ├── Attendance/
+│   │   ├── Assignments/
+│   │   ├── Notes/
+│   │   ├── Budget/
+│   │   ├── CGPA/
+│   │   └── StudyTimer/
+│   ├── context/             # Global state management
+│   └── utils/               # Helper functions
+│
+├── server/                  # Backend (Node.js + Express)
+│   ├── controllers/         # Route logic
+│   ├── models/              # Database schemas
+│   ├── routes/              # API endpoints
+│   ├── middleware/          # Auth & error handling
+│   └── config/              # DB and service configs
+│
+├── .env.example
+├── package.json
+└── README.md
+```
+
+---
+
+##  Screenshots
+
+> *(Coming soon — screenshots will be added after UI completion)*
+
+| Attendance Tracker | Assignment Reminders | Budget Dashboard |
+|---|---|---|
+| *Screenshot* | *Screenshot* | *Screenshot* |
+
+| CGPA Calculator | Notes Sharing | Study Timer |
+|---|---|---|
+| *Screenshot* | *Screenshot* | *Screenshot* |
+
+---
+
+##  Roadmap
+
+### Phase 1 — Foundation 
+- [x] Project concept & feature planning
+- [x] UI/UX wireframing
+- [x] Repository setup
+
+### Phase 2 — Core Development 
+- [ ] User authentication (login/signup)
+- [ ] Attendance Tracker module
+- [ ] Assignment Reminder with notifications
+- [ ] CGPA Calculator
+
+### Phase 3 — Advanced Features 
+- [ ] Notes Sharing with file upload
+- [ ] Budget Tracker with visual charts
+- [ ] Study Timer with Pomodoro mode
+
+### Phase 4 — Polish & Launch 
+- [ ] UI polish and dark mode
+- [ ] Performance optimization
+- [ ] Beta testing with real students
+- [ ] Public release on Play Store / App Store
+
+---
+
+##  Contributing
+
+Contributions are what make open-source projects thrive. If you'd like to help build UniLife:
+
+1. **Fork** the repository
+2. **Create** your feature branch
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+3. **Commit** your changes
+   ```bash
+   git commit -m "feat: add your feature description"
+   ```
+4. **Push** to the branch
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+5. **Open a Pull Request** and describe what you've changed
+
+Please make sure your code follows the existing code style and includes relevant comments.
+
+---
+
+##  License
+
+Distributed under the **MIT License**.  
+See [`LICENSE`](LICENSE) for full details.
+
+---
+
+## Author
+
+**Your Name**
+- Arpita
+- Monojit
+- Snehasish
+- Avijit
+- Muskan
 
 ---
 
 <div align="center">
 
-_**"ðŸ§  Learning Intelligence Activated."**_ <br/>
-**Built with â¤ï¸ for Students Worldwide!**
+<br/>
 
-[!Supabase](https://supabase.com/)
-[!Vercel](https://vercel.com/)
-[!Groq](https://groq.com/)
-[!React](https://react.dev/)
+*Built with 💙 for students who deserve better tools.*
+
+<br/>
+
+⭐ **Found this useful? Drop a star — it means a lot and helps others discover the project!** ⭐
+
+<br/>
+
+![Visitor Count](https://visitor-badge.laobi.icu/badge?page_id=Monoartiam99.uni_life)
 
 </div>
